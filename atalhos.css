@@ -1,11 +1,183 @@
+/* Definições de Cores (Remoção de TONS VIBRANTES) */
+:root {
+    /* Cor Primária AGORA é Branco (Neutro) */
+    --color-primary: #FFFFFF;       
+    --color-secondary: #000000;
+    --color-background: #0D0D0D;
+    --color-surface: #1F1F1F;
+    --color-surface-light: #333333;
+    --color-text: #FFFFFF;          /* Texto Principal: Branco Puro */
+    --color-text-secondary: #AAAAAA;/* Texto Secundário (Cinza) */
+    --font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Estilos Globais */
+body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-stack);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ----------------------------------- */
+/* CABEÇALHO (HEADER) - NOVO LAYOUT SIMPLIFICADO */
+/* ----------------------------------- */
+header {
+    background-color: var(--color-surface);
+    padding: 15px 0;
+    border-bottom: 2px solid var(--color-surface-light);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; 
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    color: var(--color-text);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.logo i {
+    font-size: 1.8rem;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Navegação (Centralizada e com o link transformado em botão) */
+nav {
+    flex-grow: 1; /* Ocupa o espaço central disponível */
+    text-align: center;
+}
+
+nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+    /* Estilo de BOTÃO NEUTRO */
+    background-color: transparent;
+    border: 1px solid var(--color-text-secondary); /* Borda sutil para dar forma */
+    display: inline-block; 
+}
+
+nav a:hover,
+nav a.active-link {
+    /* Efeito hover de botão */
+    background-color: var(--color-surface-light); 
+    border-color: var(--color-text); /* Borda destaca no hover */
+    color: var(--color-text);
+}
+
+/* Barra de Busca */
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 8px 15px;
+    padding-right: 35px; 
+    border: 1px solid var(--color-surface-light);
+    border-radius: 6px;
+    background-color: var(--color-surface-light);
+    color: var(--color-text);
+    font-size: 0.95rem;
+    transition: border-color 0.3s;
+}
+
+.search-bar input::placeholder {
+    color: var(--color-text-secondary);
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: var(--color-text); 
+}
+
+.search-bar i {
+    position: absolute;
+    right: 10px;
+    color: var(--color-text-secondary);
+}
+
+/* Estilos de Título e Footer */
+.section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    border-top: 1px solid var(--color-surface-light);
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+}
+
+
+/* ----------------------------------- */
+/* Seção: Navegação Secundária/Breadcrumbs (Mantida, mas não aparece no HTML atual) */
+/* ----------------------------------- */
+.secondary-nav {
+    padding: 15px 0;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    border-bottom: 1px solid var(--color-surface-light);
+}
+
+.secondary-nav a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.secondary-nav a:hover {
+    color: var(--color-text); /* Destaque no hover (Branco Puro) */
+}
+
+/* O separador pode ser um ícone ou caractere especial */
+.secondary-nav span {
+    margin: 0 8px;
+    color: var(--color-surface-light);
+}
+
 /* Estilo para a Introdução */
 .intro-text {
     font-size: 1.1rem;
     color: var(--color-text-secondary);
     margin-bottom: 40px;
     padding-left: 14px;
-    border-left: 2px solid var(--color-surface-light);
+    /* Linha de destaque neutra */
+    border-left: 2px solid var(--color-text); 
 }
+
 
 /* ----------------------------------- */
 /* Acordeão de Atalhos (Shortcuts) */
@@ -48,8 +220,8 @@
 }
 
 .accordion-header i:first-child {
-    /* Ícone da Categoria (Windows, Globo, etc.) */
-    color: var(--color-primary);
+    /* Ícone da Categoria: Branco Puro */
+    color: var(--color-text); 
     font-size: 1.4rem;
     margin-right: 20px;
 }
@@ -68,7 +240,7 @@
 
 .accordion-item.active .toggle-icon {
     transform: rotate(180deg);
-    color: var(--color-primary);
+    color: var(--color-text); /* Seta Ativa: Branco Puro */
 }
 
 .accordion-content {
@@ -98,19 +270,20 @@
     font-family: monospace;
     font-size: 1.0rem;
     font-weight: bold;
-    color: var(--color-primary); /* Combinação de teclas em Ciano */
-    background-color: #0d0d0d; /* Fundo escuro sutil para o combo */
+    /* Combinação de teclas: Branca/Cinza Claro */
+    color: var(--color-text); 
+    background-color: #0d0d0d; 
     padding: 4px 8px;
     border-radius: 4px;
     margin-right: 20px;
-    white-space: nowrap; /* Evita que o atalho quebre a linha */
+    white-space: nowrap; 
 }
 
 .action {
     color: var(--color-text);
     font-size: 1.0rem;
     flex-grow: 1;
-    text-align: right; /* Alinhamento Padrão: Direita */
+    text-align: right; 
 }
 
 /* ======================================================= */
@@ -119,6 +292,35 @@
 
 /* --- Ponto de quebra: 768px (Tablets e Mobile Paisagem) --- */
 @media (max-width: 768px) {
+    /* Header - Ajuste para Mobile */
+    header .container {
+        /* Empilha os elementos no mobile para não esmagar o conteúdo */
+        flex-direction: column;
+        gap: 10px;
+    }
+    .search-bar {
+        width: 100%; /* Ocupa a largura total no mobile */
+        order: 3; /* Coloca a busca por último */
+    }
+    .search-bar input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .logo {
+        order: 1; /* Coloca o logo primeiro */
+    }
+    nav {
+        order: 2; /* Coloca o botão de início no meio */
+        text-align: center;
+        width: 100%; /* Garante que o nav ocupe a largura total */
+    }
+
+
+    /* Navegação Secundária */
+    .secondary-nav {
+        font-size: 0.9rem;
+    }
+    
     .intro-text {
         font-size: 1rem;
         margin-bottom: 30px;
