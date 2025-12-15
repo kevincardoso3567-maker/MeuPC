@@ -43,7 +43,7 @@ header {
 
 header .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Ajustado para lidar com apenas logo e search-bar */
     align-items: center;
 }
 
@@ -64,20 +64,16 @@ header .container {
     color: var(--color-primary); 
 }
 
+/* Nav styles removidos/comentados */
+/*
 nav a {
-    color: var(--color-text-secondary); 
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 5px 0;
-    transition: color 0.3s, border-bottom 0.3s;
+    ...
 }
 
 nav a:hover {
-    color: var(--color-primary); 
-    border-bottom: 2px solid var(--color-primary);
+    ...
 }
+*/
 
 .search-bar {
     display: flex;
@@ -124,6 +120,7 @@ main {
     margin-bottom: 50px;
 }
 
+/* ESTILOS PARA CARD COMO LINK <a> */
 .card {
     background: var(--color-surface);
     border-radius: 8px; 
@@ -138,7 +135,13 @@ main {
     text-align: center;
     height: 250px; 
     position: relative;
+    /* Adicionado para links: */
+    text-decoration: none; 
+    color: inherit; /* Garante que o texto seja branco */
+    cursor: pointer;
 }
+/* FIM ESTILOS PARA CARD COMO LINK <a> */
+
 
 .card:hover {
     transform: translateY(-5px);
@@ -294,29 +297,31 @@ footer {
     
     /* 1. Header e Navegação */
     header .container {
-        /* Muda para coluna no mobile, escondendo a nav e a busca */
+        /* Permite que o logo e a search bar fiquem em colunas no mobile */
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center; 
     }
 
+    .logo {
+        margin-bottom: 10px; /* Espaçamento entre logo e search bar */
+    }
+
+    /* nav styles removidos/comentados */
+    /*
     nav {
-        /* Ocupa a largura total e centraliza a navegação */
-        width: 100%;
-        text-align: center;
-        margin: 15px 0;
+        ...
     }
 
     nav a {
-        /* Reduz o espaçamento dos links */
-        margin: 0 10px;
-        font-size: 0.9rem;
+        ...
     }
+    */
     
     .search-bar {
         /* Ocupa a largura total do container */
         width: 100%;
         padding: 8px 15px;
-        margin-bottom: 10px;
+        margin-bottom: 0; /* Removido o margin-bottom desnecessário */
     }
     
     .search-bar input {
