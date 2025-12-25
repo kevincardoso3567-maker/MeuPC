@@ -1,49 +1,51 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Efeito de Fade-In para Cards e Conteúdo
-    // Seleciona todos os elementos que queremos animar (cards, itens, etc.)
-    const elementsToAnimate = document.querySelectorAll(
-        '.card, .content-item, .tip-card, header'
-    );
+    
+    const rootStyles = getComputedStyle(document.documentElement);
+    const colorPrimary = rootStyles.getPropertyValue('--color-primary').trim();
+    
+    // 1. Efeito de Fade-In Inicial
+    const cards = document.querySelectorAll('.card, .section-title, .tip-card');
 
-    // Inicializa os elementos para o efeito de fade-in
-    elementsToAnimate.forEach(el => {
+    cards.forEach((el, index) => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
-        // A transição será tratada pelo CSS, mas garantimos que ela exista
-        el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        el.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+        
+        setTimeout(() => {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+        }, 100 * index);
     });
 
-    // Função para mostrar os elementos com um pequeno atraso
-    function fadeInElements() {
-        let delay = 0;
-        elementsToAnimate.forEach(el => {
-            setTimeout(() => {
-                el.style.opacity = '1';
-                el.style.transform = 'translateY(0)';
-            }, delay);
-            delay += 100; // Atraso de 100ms entre cada elemento
-        });
-    }
+    // 2. Comportamento da Barra de Pesquisa (Foco + Filtro Real)
+    const searchInput = document.getElementById('searchInput');
+    const searchBarContainer = document.querySelector('.search-bar');
+    const allCards = document.querySelectorAll('.card');
 
-    // Chama a função após um pequeno tempo para garantir que o CSS carregou
-    setTimeout(fadeInElements, 50);
-
-    // 2. Comportamento da Barra de Pesquisa (Efeito Premium no Foco)
-    const searchInput = document.querySelector('.search-bar input');
-    const searchBarContainer = document.querySelector('.search-bar'); // Seleciona o elemento pai que contém o background
-
+    // Efeito Visual de Foco
     searchInput.addEventListener('focus', () => {
-        // Adiciona um estilo visual premium quando o input está focado
-        searchBarContainer.style.border = '1px solid var(--color-primary)';
-        searchBarContainer.style.boxShadow = '0 0 10px rgba(0, 255, 255, 0.5)'; // Efeito de brilho ciano
-        searchBarContainer.style.transition = 'border 0.3s, box-shadow 0.3s';
-        
-        console.log('Foco na pesquisa. Ativando visual premium.');
+        searchBarContainer.style.border = `1px solid ${colorPrimary}`;
+        searchBarContainer.style.boxShadow = `0 0 15px ${colorPrimary}50`;
     });
 
     searchInput.addEventListener('blur', () => {
-        // Remove os estilos quando o foco é perdido, voltando ao estado normal
-        searchBarContainer.style.border = 'none';
+        searchBarContainer.style.border = '1px solid transparent'; 
         searchBarContainer.style.boxShadow = 'none';
+    });
+
+    // Lógica de Busca (Filtra os cards por título)
+    searchInput.addEventListener('input', (e) => {
+        const term = e.target.value.toLowerCase();
+
+        allCards.forEach(card => {
+            const title = card.querySelector('h2').innerText.toLowerCase();
+            if (title.includes(term)) {
+                card.style.display = 'flex';
+                card.style.opacity = '1';
+            } else {
+                card.style.display = 'none';
+                card.style.opacity = '0';
+            }
+        });
     });
 });
