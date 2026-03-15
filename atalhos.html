@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu PC — Atalhos de Teclado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="atalhos.css">
+</head>
+<body>
+
+    <!-- ─── HEADER ─── -->
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-microchip"></i></div>
+                <span class="logo-text">MEU<span>PC</span></span>
+            </a>
+
+            <div class="search-wrap">
+                <input type="text" id="searchInput" placeholder="Filtrar atalhos..." autocomplete="off">
+                <i class="fas fa-search"></i>
+            </div>
+
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                <span>Início</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- ─── PAGE HERO ─── -->
+    <section class="page-hero">
+        <div class="page-hero-inner">
+            <div class="breadcrumb">
+                <a href="index.html">Início</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Atalhos</span>
+            </div>
+            <div class="page-hero-content">
+                <div class="page-icon">
+                    <i class="fa-solid fa-keyboard"></i>
+                </div>
+                <div>
+                    <h1>Atalhos de Teclado</h1>
+                    <p>Guia completo de atalhos organizados por categoria. Clique em qualquer tecla para copiar.</p>
+                </div>
+            </div>
+            <div class="hero-pills">
+                <span class="pill" data-filter="all">Todos</span>
+                <span class="pill" data-filter="ctrl">CTRL</span>
+                <span class="pill" data-filter="win">WIN</span>
+                <span class="pill" data-filter="alt">ALT</span>
+                <span class="pill" data-filter="shift">SHIFT</span>
+                <span class="pill" data-filter="fn">Teclas F</span>
+                <span class="pill" data-filter="outros">Outros</span>
+                <span class="pill" data-filter="char">Caracteres</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── ACCORDION CONTENT ─── -->
+    <main class="main-content">
+        <div class="main-inner">
+
+            <!-- No results -->
+            <div id="no-results" class="no-results" style="display:none;">
+                <i class="fas fa-search"></i>
+                <p>Nenhum atalho encontrado para "<span id="search-term"></span>"</p>
+            </div>
+
+            <!-- CTRL -->
+            <div class="accordion-item" data-category="ctrl">
+                <button class="accordion-header">
+                    <div class="acc-left">
+                        <div class="acc-icon" style="--acc-color: #00F5A0;">
+                            <i class="fa-solid fa-keyboard"></i>
+                        </div>
+                        <div class="acc-info">
+                            <h3>Teclas CTRL</h3>
+                            <span class="acc-count">20 atalhos</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </button>
+                <div class="accordion-content">
+                    <div class="shortcut-grid">
+                        <div class="shortcut-row"><div class="key-combo"><kbd>CTRL</kbd><span>+</span><kbd>A</kbd></div><span class="action">Selecionar tudo</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>CTRL</kbd><span>+</span><kbd>C</kbd></div><span class="action">Copiar</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>CTRL</kbd><span>+</span><kbd>X</kbd></div><span class="action">Recortar</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>CTRL</kbd><span>+</span><kbd>V</kbd></div><span class="action">Colar</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>CTRL</kbd><span>+</span><kbd>Z</kbd></div><span class="action">Desfazer</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>CTRL</kbd><span>+</span><kbd>Y</kbd></div><span class="action">Refazer</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>CTRL</kbd><span>+</span><kbd>B</kbd></div><span class="action">Negrito</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>CTRL</kbd><span>+</span><kbd>U</kbd></div><span class="action">Sublinhado</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>CTRL</kbd><span>+</span><kbd>I</kbd></div><span class="action">Itálico</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>CTRL</kbd><span>+</span><kbd>T</kbd></div><span class="action">Nova aba (Navegador)</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>CTRL</kbd><span>+</span><kbd>F4</kbd></div><span class="action">Fecha guias internas</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>CTRL</kbd><span>+</span><kbd>D</kbd></div><span class="action">Enviar para a Lixeira</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>CTRL</kbd><span>+</span><kbd>R</kbd></div><span class="action">Atualizar janela</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>CTRL</kbd><span>+</span><kbd>↑↓←→</kbd></div><span class="action">Mover cursor por palavras</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>CTRL</kbd><span>+</span><kbd>SHIFT</kbd><span>+</span><kbd>↑↓←→</kbd></div><span class="action">Mover e selecionar por palavras</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>CTRL</kbd><span>+</span><kbd>TAB</kbd></div><span class="action">Alterna entre abas</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>CTRL</kbd><span>+</span><kbd>ALT</kbd><span>+</span><kbd>TAB</kbd></div><span class="action">Alternar aplicativos abertos</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>CTRL</kbd><span>+</span><kbd>SHIFT</kbd><span>+</span><kbd>ESC</kbd></div><span class="action">Gerenciador de Tarefas</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>CTRL</kbd><span>+</span><kbd>ESC</kbd></div><span class="action">Abre o menu Iniciar</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>CTRL</kbd><span>+</span><kbd>HOME / END</kbd></div><span class="action">Vai para o topo / final</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WIN -->
+            <div class="accordion-item" data-category="win">
+                <button class="accordion-header">
+                    <div class="acc-left">
+                        <div class="acc-icon" style="--acc-color: #00D9F5;">
+                            <i class="fa-brands fa-windows"></i>
+                        </div>
+                        <div class="acc-info">
+                            <h3>Teclas Windows (WIN)</h3>
+                            <span class="acc-count">40 atalhos</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </button>
+                <div class="accordion-content">
+                    <div class="shortcut-grid">
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd></div><span class="action">Abre o Menu Iniciar</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>D</kbd></div><span class="action">Mostra/oculta a área de trabalho</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>E</kbd></div><span class="action">Abre o Explorador de Arquivos</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>L</kbd></div><span class="action">Bloqueia o computador</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>I</kbd></div><span class="action">Abre as Configurações</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>S</kbd></div><span class="action">Abre a Pesquisa</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>R</kbd></div><span class="action">Abre o Executar</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>X</kbd></div><span class="action">Menu avançado do sistema</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>A</kbd></div><span class="action">Central de ações</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>Tab</kbd></div><span class="action">Visão de tarefas</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>P</kbd></div><span class="action">Opções de projeção de tela</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>U</kbd></div><span class="action">Acessibilidade</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>V</kbd></div><span class="action">Histórico da área de transferência</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>↑</kbd></div><span class="action">Maximiza a janela</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>↓</kbd></div><span class="action">Restaura ou minimiza a janela</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>←</kbd></div><span class="action">Encaixa a janela à esquerda</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>→</kbd></div><span class="action">Encaixa a janela à direita</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>M</kbd></div><span class="action">Minimiza todas as janelas</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>SHIFT</kbd><span>+</span><kbd>M</kbd></div><span class="action">Restaura janelas minimizadas</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>Home</kbd></div><span class="action">Minimiza todas exceto a ativa</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>Alt</kbd><span>+</span><kbd>D</kbd></div><span class="action">Mostra data e hora</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>CTRL</kbd><span>+</span><kbd>D</kbd></div><span class="action">Cria um desktop virtual</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>CTRL</kbd><span>+</span><kbd>←/→</kbd></div><span class="action">Navegar entre desktops virtuais</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>CTRL</kbd><span>+</span><kbd>F4</kbd></div><span class="action">Fecha o desktop virtual atual</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>PrtScn</kbd></div><span class="action">Captura tela inteira e salva</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>SHIFT</kbd><span>+</span><kbd>S</kbd></div><span class="action">Ferramenta de captura de tela</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>Alt</kbd><span>+</span><kbd>PrtScn</kbd></div><span class="action">Captura a janela ativa</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>G</kbd></div><span class="action">Abre a Xbox Game Bar</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>Pause</kbd></div><span class="action">Informações do sistema</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>K</kbd></div><span class="action">Conectar a dispositivos sem fio</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>O</kbd></div><span class="action">Bloqueia rotação da tela</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>1–9</kbd></div><span class="action">Abre apps fixados na barra</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>SHIFT</kbd><span>+</span><kbd>1–9</kbd></div><span class="action">Nova instância do app</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>T</kbd></div><span class="action">Navega pelos apps da barra</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>B</kbd></div><span class="action">Seleciona área de ícones ocultos</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>+</kbd></div><span class="action">Ativa a lupa (zoom +)</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>-</kbd></div><span class="action">Diminui o zoom da lupa</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>Esc</kbd></div><span class="action">Fecha a lupa</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>CTRL</kbd><span>+</span><kbd>N</kbd></div><span class="action">Ativa o Narrador</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Win</kbd><span>+</span><kbd>CTRL</kbd><span>+</span><kbd>O</kbd></div><span class="action">Abre o teclado virtual</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ALT -->
+            <div class="accordion-item" data-category="alt">
+                <button class="accordion-header">
+                    <div class="acc-left">
+                        <div class="acc-icon" style="--acc-color: #F5A623;">
+                            <i class="fa-solid fa-box-archive"></i>
+                        </div>
+                        <div class="acc-info">
+                            <h3>Teclas ALT</h3>
+                            <span class="acc-count">6 atalhos</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </button>
+                <div class="accordion-content">
+                    <div class="shortcut-grid">
+                        <div class="shortcut-row"><div class="key-combo"><kbd>ALT</kbd><span>+</span><kbd>TAB</kbd></div><span class="action">Alterna entre aplicativos abertos</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>ALT</kbd><span>+</span><kbd>F4</kbd></div><span class="action">Fecha o programa ou janela atual</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>ALT</kbd><span>+</span><kbd>F6</kbd></div><span class="action">Alterna entre janelas do mesmo programa</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>ALT</kbd><span>+</span><kbd>ENTER</kbd></div><span class="action">Abre a janela de propriedades</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>ALT</kbd><span>+</span><kbd>SPACE</kbd></div><span class="action">Menu do sistema da janela atual</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>ALT</kbd><span>+</span><kbd>↓</kbd></div><span class="action">Abre listas suspensas em diálogos</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SHIFT -->
+            <div class="accordion-item" data-category="shift">
+                <button class="accordion-header">
+                    <div class="acc-left">
+                        <div class="acc-icon" style="--acc-color: #C792EA;">
+                            <i class="fa-solid fa-sliders"></i>
+                        </div>
+                        <div class="acc-info">
+                            <h3>Teclas SHIFT</h3>
+                            <span class="acc-count">17 atalhos</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </button>
+                <div class="accordion-content">
+                    <div class="shortcut-grid">
+                        <div class="shortcut-row"><div class="key-combo"><kbd>SHIFT</kbd><span>+</span><kbd>F10</kbd></div><span class="action">Abre menu de contexto (Botão direito)</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>SHIFT</kbd><span>+</span><kbd>DELETE</kbd></div><span class="action">Exclui permanentemente (ignora Lixeira)</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>SHIFT</kbd><span>+</span><kbd>Letra</kbd></div><span class="action">Digita a letra em maiúscula</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>SHIFT</kbd><span>+</span><kbd>Número</kbd></div><span class="action">Digita o símbolo superior do número</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>SHIFT</kbd><span>+</span><kbd>← / →</kbd></div><span class="action">Seleciona texto caractere a caractere</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>SHIFT</kbd><span>+</span><kbd>↑ / ↓</kbd></div><span class="action">Seleciona linhas acima / abaixo</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>SHIFT</kbd><span>+</span><kbd>HOME / END</kbd></div><span class="action">Seleciona até início / final da linha</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>SHIFT</kbd><span>+</span><kbd>PGUP / PGDN</kbd></div><span class="action">Seleciona uma tela acima / abaixo</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>SHIFT</kbd><span>+</span><kbd>CTRL</kbd><span>+</span><kbd>← / →</kbd></div><span class="action">Seleciona palavra anterior / próxima</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>SHIFT</kbd><span>+</span><kbd>Clique</kbd></div><span class="action">Selecionar vários itens em sequência</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>SHIFT</kbd><span>+</span><kbd>ALT</kbd><span>+</span><kbd>TAB</kbd></div><span class="action">Alternar janelas ao contrário</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>SHIFT</kbd><span>+</span><kbd>CTRL</kbd><span>+</span><kbd>TAB</kbd></div><span class="action">Aba anterior (Navegador)</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>SHIFT</kbd><span>+</span><kbd>WIN</kbd><span>+</span><kbd>← / →</kbd></div><span class="action">Mover janela entre monitores</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>SHIFT</kbd><span>+</span><kbd>WIN</kbd><span>+</span><kbd>S</kbd></div><span class="action">Captura de tela avançada</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>SHIFT</kbd><span>+</span><kbd>CTRL</kbd><span>+</span><kbd>T</kbd></div><span class="action">Reabrir aba fechada</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>SHIFT</kbd><span>+</span><kbd>CTRL</kbd><span>+</span><kbd>N</kbd></div><span class="action">Nova janela anônima</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>SHIFT</kbd><span>+</span><kbd>Reiniciar</kbd></div><span class="action">Opções avançadas do Windows</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TECLAS F -->
+            <div class="accordion-item" data-category="fn">
+                <button class="accordion-header">
+                    <div class="acc-left">
+                        <div class="acc-icon" style="--acc-color: #89DDFF;">
+                            <i class="fa-solid fa-bars-staggered"></i>
+                        </div>
+                        <div class="acc-info">
+                            <h3>Teclas F (Funções)</h3>
+                            <span class="acc-count">8 atalhos</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </button>
+                <div class="accordion-content">
+                    <div class="shortcut-grid">
+                        <div class="shortcut-row"><div class="key-combo"><kbd>F1</kbd></div><span class="action">Ajuda</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>F2</kbd></div><span class="action">Renomear objeto selecionado</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>F3</kbd></div><span class="action">Pesquisar</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>F4</kbd></div><span class="action">Abre lista suspensa em diálogos</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>F5</kbd></div><span class="action">Atualizar janela atual</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>F7</kbd></div><span class="action">Verificar ortografia</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>F10</kbd></div><span class="action">Ativa as opções da barra de menu</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>F11</kbd></div><span class="action">Tela cheia</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OUTROS -->
+            <div class="accordion-item" data-category="outros">
+                <button class="accordion-header">
+                    <div class="acc-left">
+                        <div class="acc-icon" style="--acc-color: #FF9D8A;">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                        <div class="acc-info">
+                            <h3>Outras Teclas</h3>
+                            <span class="acc-count">7 atalhos</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </button>
+                <div class="accordion-content">
+                    <div class="shortcut-grid">
+                        <div class="shortcut-row"><div class="key-combo"><kbd>ESC</kbd></div><span class="action">Cancela a última função</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>HOME / END</kbd></div><span class="action">Início / final da linha</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>PAGE UP / DOWN</kbd></div><span class="action">Sobe / Desce uma página</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>↑↓←→</kbd></div><span class="action">Move o cursor/foco</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>CTRL</kbd><span>+</span><kbd>ALT</kbd><span>+</span><kbd>DEL</kbd></div><span class="action">Gerenciador de Tarefas / Reiniciar</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>TAB</kbd></div><span class="action">Avançar e Navegação</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>CAPS LOCK</kbd></div><span class="action">Travar letras maiúsculas</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARACTERES ESPECIAIS -->
+            <div class="accordion-item" data-category="char">
+                <button class="accordion-header">
+                    <div class="acc-left">
+                        <div class="acc-icon" style="--acc-color: #F5A623;">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <div class="acc-info">
+                            <h3>Caracteres Especiais (Códigos ALT)</h3>
+                            <span class="acc-count">16 atalhos</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </button>
+                <div class="accordion-content">
+                    <div class="shortcut-grid">
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Alt</kbd><span>+</span><kbd>0145</kbd></div><span class="action">' Aspa simples de abertura</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Alt</kbd><span>+</span><kbd>0146</kbd></div><span class="action">' Aspa simples de fechamento</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Alt</kbd><span>+</span><kbd>0147</kbd></div><span class="action">" Aspa dupla de abertura</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Alt</kbd><span>+</span><kbd>0148</kbd></div><span class="action">" Aspa dupla de fechamento</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Alt</kbd><span>+</span><kbd>0150</kbd></div><span class="action">– En dash</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Alt</kbd><span>+</span><kbd>0151</kbd></div><span class="action">— Em dash</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Alt</kbd><span>+</span><kbd>0133</kbd></div><span class="action">… Reticências</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Alt</kbd><span>+</span><kbd>0149</kbd></div><span class="action">• Bullet</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Alt</kbd><span>+</span><kbd>0174</kbd></div><span class="action">® Marca Registrada</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Alt</kbd><span>+</span><kbd>0169</kbd></div><span class="action">© Copyright</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Alt</kbd><span>+</span><kbd>0153</kbd></div><span class="action">™ Trademark</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Alt</kbd><span>+</span><kbd>0176</kbd></div><span class="action">° Grau</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Alt</kbd><span>+</span><kbd>0162</kbd></div><span class="action">¢ Centavo</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Alt</kbd><span>+</span><kbd>0188</kbd></div><span class="action">¼ Um quarto</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Alt</kbd><span>+</span><kbd>0189</kbd></div><span class="action">½ Um meio</span></div>
+                        <div class="shortcut-row"><div class="key-combo"><kbd>Alt</kbd><span>+</span><kbd>0190</kbd></div><span class="action">¾ Três quartos</span></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ─── FOOTER ─── -->
+    <footer>
+        <div class="footer-inner">
+            <span class="footer-logo">MEU<span>PC</span></span>
+            <span class="footer-copy">&copy; 2025 — Todas as dicas que você precisa.</span>
+        </div>
+    </footer>
+
+    <!-- Toast de cópia -->
+    <div id="copy-toast" class="copy-toast">
+        <i class="fas fa-check"></i> Copiado!
+    </div>
+
+    <script src="atalhos.js"></script>
+</body>
+</html>

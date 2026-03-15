@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu PC — Softwares Essenciais</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="softwares.css">
+</head>
+<body>
+
+    <!-- ─── HEADER ─── -->
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-microchip"></i></div>
+                <span class="logo-text">MEU<span>PC</span></span>
+            </a>
+            <div class="search-wrap">
+                <input type="text" id="softwareSearch" placeholder="Filtrar softwares..." autocomplete="off">
+                <i class="fas fa-search"></i>
+            </div>
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                <span>Início</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- ─── PAGE HERO ─── -->
+    <section class="page-hero">
+        <div class="page-hero-inner">
+            <div class="breadcrumb">
+                <a href="index.html">Início</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Softwares</span>
+            </div>
+            <div class="page-hero-content">
+                <div class="page-icon">
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <div>
+                    <h1>Softwares Essenciais</h1>
+                    <p>Apps indispensáveis para qualquer PC Windows. Gratuitos, open-source e realmente úteis.</p>
+                </div>
+            </div>
+            <div class="hero-pills">
+                <span class="pill active" data-filter="all">Todos</span>
+                <span class="pill" data-filter="utilidade">Utilidade</span>
+                <span class="pill" data-filter="criacao">Criação</span>
+                <span class="pill" data-filter="rede">Rede</span>
+                <span class="pill" data-filter="dev">Dev</span>
+                <span class="pill" data-filter="midia">Mídia</span>
+                <span class="pill" data-filter="seguranca">Segurança</span>
+                <span class="pill" data-filter="produtividade">Produtividade</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── GRID ─── -->
+    <main class="main-content">
+        <div class="main-inner" id="softwareGrid">
+
+            <div id="no-results" class="no-results" style="display:none;">
+                <i class="fas fa-search"></i>
+                <p>Nenhum software encontrado para "<span id="search-term"></span>"</p>
+            </div>
+
+            <!-- ═══ UTILIDADE ═══ -->
+
+            <div class="sw-card" data-category="utilidade" data-name="qbittorrent torrent download p2p">
+                <div class="sw-img">
+                    <img src="qBittorrent.png" alt="qBittorrent"
+                         onerror="this.style.display='none'; this.closest('.sw-img').classList.add('no-img')">
+                    <div class="sw-img-fallback"><i class="fas fa-magnet"></i></div>
+                </div>
+                <div class="sw-body">
+                    <div class="sw-meta">
+                        <span class="sw-tag" style="--tag-color:#00F5A0;">Utilidade</span>
+                        <span class="sw-badge free">Grátis</span>
+                    </div>
+                    <h3>qBittorrent</h3>
+                    <p>O melhor cliente torrent open-source. Sem ads, sem bloatware. Interface limpa com busca integrada.</p>
+                    <a href="https://www.qbittorrent.org/download" target="_blank" rel="noopener" class="sw-btn">Download <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="sw-card" data-category="utilidade" data-name="localsend compartilhar arquivos rede local wifi airdrop">
+                <div class="sw-img">
+                    <img src="LocalSend.png" alt="LocalSend"
+                         onerror="this.style.display='none'; this.closest('.sw-img').classList.add('no-img')">
+                    <div class="sw-img-fallback"><i class="fas fa-share-nodes"></i></div>
+                </div>
+                <div class="sw-body">
+                    <div class="sw-meta">
+                        <span class="sw-tag" style="--tag-color:#00F5A0;">Utilidade</span>
+                        <span class="sw-badge free">Grátis</span>
+                    </div>
+                    <h3>LocalSend</h3>
+                    <p>Compartilhe arquivos entre dispositivos na mesma rede local sem internet. AirDrop para todos.</p>
+                    <a href="https://localsend.org" target="_blank" rel="noopener" class="sw-btn">Download <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="sw-card" data-category="utilidade" data-name="quicklook visualizar arquivos prévia espaço macos windows">
+                <div class="sw-img">
+                    <img src="QuickLook.png" alt="QuickLook"
+                         onerror="this.style.display='none'; this.closest('.sw-img').classList.add('no-img')">
+                    <div class="sw-img-fallback"><i class="fas fa-eye"></i></div>
+                </div>
+                <div class="sw-body">
+                    <div class="sw-meta">
+                        <span class="sw-tag" style="--tag-color:#00F5A0;">Utilidade</span>
+                        <span class="sw-badge free">Grátis</span>
+                    </div>
+                    <h3>QuickLook</h3>
+                    <p>Prévia instantânea de arquivos com a tecla Espaço, como no macOS. Suporta PDF, imagens e vídeos.</p>
+                    <a href="https://github.com/QL-Win/QuickLook/releases" target="_blank" rel="noopener" class="sw-btn">Download <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="sw-card" data-category="utilidade" data-name="7zip compactar extrair zip rar arquivos compressão">
+                <div class="sw-img">
+                    <img src="7-Zip.png" alt="7-Zip"
+                         onerror="this.style.display='none'; this.closest('.sw-img').classList.add('no-img')">
+                    <div class="sw-img-fallback"><i class="fas fa-file-zipper"></i></div>
+                </div>
+                <div class="sw-body">
+                    <div class="sw-meta">
+                        <span class="sw-tag" style="--tag-color:#00F5A0;">Utilidade</span>
+                        <span class="sw-badge free">Grátis</span>
+                    </div>
+                    <h3>7-Zip</h3>
+                    <p>O melhor compactador de arquivos gratuito. Suporta ZIP, RAR, 7z, TAR e dezenas de outros formatos.</p>
+                    <a href="https://www.7-zip.org/download.html" target="_blank" rel="noopener" class="sw-btn">Download <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="sw-card" data-category="utilidade" data-name="everything busca arquivos pesquisa rápida indexação windows">
+                <div class="sw-img">
+                    <img src="Everything.png" alt="Everything"
+                         onerror="this.style.display='none'; this.closest('.sw-img').classList.add('no-img')">
+                    <div class="sw-img-fallback"><i class="fas fa-magnifying-glass"></i></div>
+                </div>
+                <div class="sw-body">
+                    <div class="sw-meta">
+                        <span class="sw-tag" style="--tag-color:#00F5A0;">Utilidade</span>
+                        <span class="sw-badge free">Grátis</span>
+                    </div>
+                    <h3>Everything</h3>
+                    <p>Busca qualquer arquivo no PC em menos de 1 segundo. Indexação instantânea de todo o sistema.</p>
+                    <a href="https://www.voidtools.com/downloads/" target="_blank" rel="noopener" class="sw-btn">Download <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="sw-card" data-category="utilidade" data-name="powertoys microsoft utilitários ferramentas windows produtividade">
+                <div class="sw-img">
+                    <img src="PowerToys.png" alt="PowerToys"
+                         onerror="this.style.display='none'; this.closest('.sw-img').classList.add('no-img')">
+                    <div class="sw-img-fallback"><i class="fas fa-wrench"></i></div>
+                </div>
+                <div class="sw-body">
+                    <div class="sw-meta">
+                        <span class="sw-tag" style="--tag-color:#00F5A0;">Utilidade</span>
+                        <span class="sw-badge free">Grátis</span>
+                    </div>
+                    <h3>PowerToys</h3>
+                    <p>Suite da Microsoft com 20+ ferramentas: renomear em lote, lupa, seletor de cores e janelas inteligentes.</p>
+                    <a href="https://github.com/microsoft/PowerToys/releases" target="_blank" rel="noopener" class="sw-btn">Download <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="sw-card" data-category="utilidade" data-name="mkvtoolnix mkv vídeo editar mesclar legendas faixas">
+                <div class="sw-img">
+                    <img src="MKVToolNix.png" alt="MKVToolNix"
+                         onerror="this.style.display='none'; this.closest('.sw-img').classList.add('no-img')">
+                    <div class="sw-img-fallback"><i class="fas fa-film"></i></div>
+                </div>
+                <div class="sw-body">
+                    <div class="sw-meta">
+                        <span class="sw-tag" style="--tag-color:#00F5A0;">Utilidade</span>
+                        <span class="sw-badge free">Grátis</span>
+                    </div>
+                    <h3>MKVToolNix</h3>
+                    <p>Crie, edite e inspecione arquivos MKV. Mescle faixas de áudio e legendas sem recodificar o vídeo.</p>
+                    <a href="https://mkvtoolnix.download/downloads.html" target="_blank" rel="noopener" class="sw-btn">Download <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- ═══ REDE ═══ -->
+
+            <div class="sw-card" data-category="rede" data-name="brave browser navegador privacidade bloqueio ads rápido">
+                <div class="sw-img">
+                    <img src="Brave.png" alt="Brave"
+                         onerror="this.style.display='none'; this.closest('.sw-img').classList.add('no-img')">
+                    <div class="sw-img-fallback"><i class="fas fa-shield-halved"></i></div>
+                </div>
+                <div class="sw-body">
+                    <div class="sw-meta">
+                        <span class="sw-tag" style="--tag-color:#89DDFF;">Rede</span>
+                        <span class="sw-badge free">Grátis</span>
+                    </div>
+                    <h3>Brave</h3>
+                    <p>Navegador focado em privacidade com bloqueio de ads e trackers nativo. Muito mais rápido que o Chrome.</p>
+                    <a href="https://brave.com/download/" target="_blank" rel="noopener" class="sw-btn">Download <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="sw-card" data-category="rede" data-name="tailscale vpn rede privada virtual mesh wireguard">
+                <div class="sw-img">
+                    <img src="Tailscale.png" alt="Tailscale"
+                         onerror="this.style.display='none'; this.closest('.sw-img').classList.add('no-img')">
+                    <div class="sw-img-fallback"><i class="fas fa-network-wired"></i></div>
+                </div>
+                <div class="sw-body">
+                    <div class="sw-meta">
+                        <span class="sw-tag" style="--tag-color:#89DDFF;">Rede</span>
+                        <span class="sw-badge free">Grátis</span>
+                    </div>
+                    <h3>Tailscale</h3>
+                    <p>VPN mesh baseada em WireGuard. Conecte todos seus dispositivos numa rede privada sem configuração.</p>
+                    <a href="https://tailscale.com/download/windows" target="_blank" rel="noopener" class="sw-btn">Download <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- ═══ SEGURANÇA ═══ -->
+
+            <div class="sw-card" data-category="seguranca" data-name="keepassxc senha gerenciador password manager seguro criptografado">
+                <div class="sw-img">
+                    <img src="KeePassXC.png" alt="KeePassXC"
+                         onerror="this.style.display='none'; this.closest('.sw-img').classList.add('no-img')">
+                    <div class="sw-img-fallback"><i class="fas fa-key"></i></div>
+                </div>
+                <div class="sw-body">
+                    <div class="sw-meta">
+                        <span class="sw-tag" style="--tag-color:#FF9D8A;">Segurança</span>
+                        <span class="sw-badge free">Grátis</span>
+                    </div>
+                    <h3>KeePassXC</h3>
+                    <p>Gerenciador de senhas local e open-source. Banco de dados criptografado que fica só no seu PC.</p>
+                    <a href="https://keepassxc.org/download/" target="_blank" rel="noopener" class="sw-btn">Download <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- ═══ DEV ═══ -->
+
+            <div class="sw-card" data-category="dev" data-name="docker container virtualização dev desenvolvimento deploy">
+                <div class="sw-img">
+                    <img src="Docker.png" alt="Docker"
+                         onerror="this.style.display='none'; this.closest('.sw-img').classList.add('no-img')">
+                    <div class="sw-img-fallback"><i class="fas fa-box"></i></div>
+                </div>
+                <div class="sw-body">
+                    <div class="sw-meta">
+                        <span class="sw-tag" style="--tag-color:#C792EA;">Dev</span>
+                        <span class="sw-badge free">Grátis</span>
+                    </div>
+                    <h3>Docker Desktop</h3>
+                    <p>Execute containers no Windows com interface visual. Essencial para qualquer desenvolvedor moderno.</p>
+                    <a href="https://www.docker.com/products/docker-desktop/" target="_blank" rel="noopener" class="sw-btn">Download <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="sw-card" data-category="dev" data-name="adb app control android dispositivo gerenciar apps backup">
+                <div class="sw-img">
+                    <img src="ADB App Control.png" alt="ADB App Control"
+                         onerror="this.style.display='none'; this.closest('.sw-img').classList.add('no-img')">
+                    <div class="sw-img-fallback"><i class="fab fa-android"></i></div>
+                </div>
+                <div class="sw-body">
+                    <div class="sw-meta">
+                        <span class="sw-tag" style="--tag-color:#C792EA;">Dev</span>
+                        <span class="sw-badge free">Grátis</span>
+                    </div>
+                    <h3>ADB App Control</h3>
+                    <p>Interface gráfica para ADB. Gerencie, desinstale e faça backup de apps Android pelo PC com facilidade.</p>
+                    <a href="https://adbappcontrol.com" target="_blank" rel="noopener" class="sw-btn">Download <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="sw-card" data-category="dev" data-name="windows terminal cmd powershell wsl linha de comando dev abas">
+                <div class="sw-img">
+                    <img src="Windows Terminal.png" alt="Windows Terminal"
+                         onerror="this.style.display='none'; this.closest('.sw-img').classList.add('no-img')">
+                    <div class="sw-img-fallback"><i class="fas fa-terminal"></i></div>
+                </div>
+                <div class="sw-body">
+                    <div class="sw-meta">
+                        <span class="sw-tag" style="--tag-color:#C792EA;">Dev</span>
+                        <span class="sw-badge free">Grátis</span>
+                    </div>
+                    <h3>Windows Terminal</h3>
+                    <p>Terminal moderno com abas, temas e suporte a CMD, PowerShell e WSL. Substitui o prompt antigo.</p>
+                    <a href="https://aka.ms/terminal" target="_blank" rel="noopener" class="sw-btn">Download <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- ═══ CRIAÇÃO ═══ -->
+
+            <div class="sw-card" data-category="criacao" data-name="gimp edição imagem foto photoshop gratuito open-source retoques">
+                <div class="sw-img">
+                    <img src="GIMP.png" alt="GIMP"
+                         onerror="this.style.display='none'; this.closest('.sw-img').classList.add('no-img')">
+                    <div class="sw-img-fallback"><i class="fas fa-image"></i></div>
+                </div>
+                <div class="sw-body">
+                    <div class="sw-meta">
+                        <span class="sw-tag" style="--tag-color:#F5A623;">Criação</span>
+                        <span class="sw-badge free">Grátis</span>
+                    </div>
+                    <h3>GIMP</h3>
+                    <p>Editor de imagens profissional open-source. Alternativa gratuita ao Photoshop para retoques e design.</p>
+                    <a href="https://www.gimp.org/downloads/" target="_blank" rel="noopener" class="sw-btn">Download <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="sw-card" data-category="criacao" data-name="krita pintura digital arte ilustração desenho concept art animação">
+                <div class="sw-img">
+                    <img src="Krita.png" alt="Krita"
+                         onerror="this.style.display='none'; this.closest('.sw-img').classList.add('no-img')">
+                    <div class="sw-img-fallback"><i class="fas fa-pen-nib"></i></div>
+                </div>
+                <div class="sw-body">
+                    <div class="sw-meta">
+                        <span class="sw-tag" style="--tag-color:#F5A623;">Criação</span>
+                        <span class="sw-badge free">Grátis</span>
+                    </div>
+                    <h3>Krita</h3>
+                    <p>Software de pintura digital profissional. Ideal para ilustradores, concept artists e animação 2D.</p>
+                    <a href="https://krita.org/en/download/" target="_blank" rel="noopener" class="sw-btn">Download <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="sw-card" data-category="criacao" data-name="darktable fotografia raw edição lightroom gratuito open-source">
+                <div class="sw-img">
+                    <img src="Darktable.png" alt="Darktable"
+                         onerror="this.style.display='none'; this.closest('.sw-img').classList.add('no-img')">
+                    <div class="sw-img-fallback"><i class="fas fa-camera"></i></div>
+                </div>
+                <div class="sw-body">
+                    <div class="sw-meta">
+                        <span class="sw-tag" style="--tag-color:#F5A623;">Criação</span>
+                        <span class="sw-badge free">Grátis</span>
+                    </div>
+                    <h3>Darktable</h3>
+                    <p>Gerenciamento e edição RAW de nível profissional. Alternativa open-source ao Lightroom.</p>
+                    <a href="https://www.darktable.org/install/" target="_blank" rel="noopener" class="sw-btn">Download <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="sw-card" data-category="criacao" data-name="milanote notas moodboard design visual criativo quadro storyboard">
+                <div class="sw-img">
+                    <img src="Milanote.png" alt="Milanote"
+                         onerror="this.style.display='none'; this.closest('.sw-img').classList.add('no-img')">
+                    <div class="sw-img-fallback"><i class="fas fa-table-cells-large"></i></div>
+                </div>
+                <div class="sw-body">
+                    <div class="sw-meta">
+                        <span class="sw-tag" style="--tag-color:#F5A623;">Criação</span>
+                        <span class="sw-badge freemium">Freemium</span>
+                    </div>
+                    <h3>Milanote</h3>
+                    <p>Quadro visual para organizar projetos criativos. Moodboards, storyboards e brainstorming visual.</p>
+                    <a href="https://milanote.com/download" target="_blank" rel="noopener" class="sw-btn">Download <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="sw-card" data-category="criacao" data-name="inkscape vetor svg design gráfico illustrator logo ícone">
+                <div class="sw-img">
+                    <img src="Inkscape.png" alt="Inkscape"
+                         onerror="this.style.display='none'; this.closest('.sw-img').classList.add('no-img')">
+                    <div class="sw-img-fallback"><i class="fas fa-bezier-curve"></i></div>
+                </div>
+                <div class="sw-body">
+                    <div class="sw-meta">
+                        <span class="sw-tag" style="--tag-color:#F5A623;">Criação</span>
+                        <span class="sw-badge free">Grátis</span>
+                    </div>
+                    <h3>Inkscape</h3>
+                    <p>Editor de gráficos vetoriais open-source. Crie logos, ícones e ilustrações SVG. Alternativa ao Illustrator.</p>
+                    <a href="https://inkscape.org/release/" target="_blank" rel="noopener" class="sw-btn">Download <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="sw-card" data-category="criacao" data-name="handbrake conversor vídeo codificador mp4 mkv compressão h264 h265">
+                <div class="sw-img">
+                    <img src="HandBrake.png" alt="HandBrake"
+                         onerror="this.style.display='none'; this.closest('.sw-img').classList.add('no-img')">
+                    <div class="sw-img-fallback"><i class="fas fa-sliders"></i></div>
+                </div>
+                <div class="sw-body">
+                    <div class="sw-meta">
+                        <span class="sw-tag" style="--tag-color:#F5A623;">Criação</span>
+                        <span class="sw-badge free">Grátis</span>
+                    </div>
+                    <h3>HandBrake</h3>
+                    <p>Conversor de vídeo open-source com suporte a H.264, H.265, AV1. Comprime vídeos sem perder qualidade.</p>
+                    <a href="https://handbrake.fr/downloads.php" target="_blank" rel="noopener" class="sw-btn">Download <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- ═══ MÍDIA ═══ -->
+
+            <div class="sw-card" data-category="midia" data-name="vlc media player vídeo áudio reprodutor open-source codec">
+                <div class="sw-img">
+                    <img src="VLC.png" alt="VLC"
+                         onerror="this.style.display='none'; this.closest('.sw-img').classList.add('no-img')">
+                    <div class="sw-img-fallback"><i class="fas fa-play-circle"></i></div>
+                </div>
+                <div class="sw-body">
+                    <div class="sw-meta">
+                        <span class="sw-tag" style="--tag-color:#00D9F5;">Mídia</span>
+                        <span class="sw-badge free">Grátis</span>
+                    </div>
+                    <h3>VLC Media Player</h3>
+                    <p>Toca qualquer formato de vídeo ou áudio sem precisar instalar codecs. O player mais confiável do mundo.</p>
+                    <a href="https://www.videolan.org/vlc/" target="_blank" rel="noopener" class="sw-btn">Download <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="sw-card" data-category="midia" data-name="audacity áudio editar gravar podcast gravação mixagem">
+                <div class="sw-img">
+                    <img src="Audacity.png" alt="Audacity"
+                         onerror="this.style.display='none'; this.closest('.sw-img').classList.add('no-img')">
+                    <div class="sw-img-fallback"><i class="fas fa-wave-square"></i></div>
+                </div>
+                <div class="sw-body">
+                    <div class="sw-meta">
+                        <span class="sw-tag" style="--tag-color:#00D9F5;">Mídia</span>
+                        <span class="sw-badge free">Grátis</span>
+                    </div>
+                    <h3>Audacity</h3>
+                    <p>Editor de áudio gratuito e poderoso. Grave, edite e exporte podcasts, músicas e efeitos sonoros.</p>
+                    <a href="https://www.audacityteam.org/download/" target="_blank" rel="noopener" class="sw-btn">Download <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- ═══ PRODUTIVIDADE ═══ -->
+
+            <div class="sw-card" data-category="produtividade" data-name="libreoffice writer calc impress apresentação planilha documento office">
+                <div class="sw-img">
+                    <img src="LibreOffice.png" alt="LibreOffice"
+                         onerror="this.style.display='none'; this.closest('.sw-img').classList.add('no-img')">
+                    <div class="sw-img-fallback"><i class="fas fa-file-lines"></i></div>
+                </div>
+                <div class="sw-body">
+                    <div class="sw-meta">
+                        <span class="sw-tag" style="--tag-color:#89DDFF;">Produtividade</span>
+                        <span class="sw-badge free">Grátis</span>
+                    </div>
+                    <h3>LibreOffice</h3>
+                    <p>Suite completa de escritório open-source. Writer, Calc, Impress e mais. Alternativa gratuita ao MS Office.</p>
+                    <a href="https://www.libreoffice.org/download/libreoffice-fresh/" target="_blank" rel="noopener" class="sw-btn">Download <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="sw-card" data-category="produtividade" data-name="obsidian notas markdown base conhecimento pessoal offline organização">
+                <div class="sw-img">
+                    <img src="Obsidian.png" alt="Obsidian"
+                         onerror="this.style.display='none'; this.closest('.sw-img').classList.add('no-img')">
+                    <div class="sw-img-fallback"><i class="fas fa-gem"></i></div>
+                </div>
+                <div class="sw-body">
+                    <div class="sw-meta">
+                        <span class="sw-tag" style="--tag-color:#89DDFF;">Produtividade</span>
+                        <span class="sw-badge free">Grátis</span>
+                    </div>
+                    <h3>Obsidian</h3>
+                    <p>App de notas em Markdown com links bidirecionais. Crie sua base de conhecimento pessoal offline.</p>
+                    <a href="https://obsidian.md/download" target="_blank" rel="noopener" class="sw-btn">Download <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="sw-card" data-category="produtividade" data-name="flow launcher busca launcher atalho abrir apps rápido spotlight alt space">
+                <div class="sw-img">
+                    <img src="Flow Launcher.png" alt="Flow Launcher"
+                         onerror="this.style.display='none'; this.closest('.sw-img').classList.add('no-img')">
+                    <div class="sw-img-fallback"><i class="fas fa-rocket"></i></div>
+                </div>
+                <div class="sw-body">
+                    <div class="sw-meta">
+                        <span class="sw-tag" style="--tag-color:#89DDFF;">Produtividade</span>
+                        <span class="sw-badge free">Grátis</span>
+                    </div>
+                    <h3>Flow Launcher</h3>
+                    <p>Lançador de apps com Alt+Space. Abra programas, arquivos e sites em segundos. Como o Spotlight do Mac.</p>
+                    <a href="https://www.flowlauncher.com/" target="_blank" rel="noopener" class="sw-btn">Download <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ─── FOOTER ─── -->
+    <footer>
+        <div class="footer-inner">
+            <span class="footer-logo">MEU<span>PC</span></span>
+            <span class="footer-copy">&copy; 2025 — Todas as dicas que você precisa.</span>
+        </div>
+    </footer>
+
+    <script src="softwares.js"></script>
+</body>
+</html>

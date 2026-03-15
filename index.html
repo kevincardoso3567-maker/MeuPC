@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu PC — Guia Definitivo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- ─── HEADER ─── -->
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-microchip"></i></div>
+                <span class="logo-text">MEU<span>PC</span></span>
+            </a>
+            <div class="search-wrap">
+                <input type="text" id="searchInput" placeholder="Buscar no repositório..." autocomplete="off">
+                <i class="fas fa-search"></i>
+            </div>
+            <span class="header-tag">v2.0 // PT-BR</span>
+        </div>
+    </header>
+
+    <!-- ─── HERO ─── -->
+    <section class="hero">
+        <div class="hero-badge">REPOSITÓRIO ATIVO</div>
+        <h1>
+            <div class="line-1">Domine seu</div>
+            <div class="line-2">computador.</div>
+        </h1>
+        <p class="hero-sub">
+            Guias, atalhos, softwares e hardware — tudo que você precisa para usar seu PC com máxima eficiência.
+        </p>
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="stat-num">6</span>
+                <span class="stat-label">módulos</span>
+            </div>
+            <div class="stat">
+                <span class="stat-num">100+</span>
+                <span class="stat-label">dicas</span>
+            </div>
+            <div class="stat">
+                <span class="stat-num">gratuito</span>
+                <span class="stat-label">sempre</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── FEATURED STRIP ─── -->
+    <div class="featured-bar">
+        <div class="featured-strip">
+            <i class="fas fa-bolt"></i>
+            <div class="featured-strip-text">
+                <strong>NOVO: Treino de Digitação</strong>
+                <p>Aumente sua velocidade de digitação com exercícios práticos e medição de WPM em tempo real.</p>
+            </div>
+            <a href="digitacao.html" class="featured-strip-cta">Começar agora →</a>
+        </div>
+    </div>
+
+    <!-- ─── CARDS GRID ─── -->
+    <main class="content">
+        <div class="section-header">
+            <h2>Explorar conteúdo</h2>
+        </div>
+
+        <div class="grid" id="mainGrid">
+
+            <!-- ATALHOS — wide feature card -->
+            <a href="atalhos.html" class="card card--feat fade-up"
+               style="--card-accent: #00F5A0;"
+               data-title="atalhos essenciais windows chrome produtividade">
+                <div class="card-icon-wrap">
+                    <i class="fa-solid fa-keyboard"></i>
+                </div>
+                <div class="card-body">
+                    <span class="card-number">01 //</span>
+                    <h2 class="card-title">Atalhos Essenciais</h2>
+                    <p class="card-desc">Domine os atalhos de teclado do Windows e dos principais navegadores. Economize horas por semana eliminando o mouse das tarefas rotineiras.</p>
+                    <div class="card-tags">
+                        <span class="tag">WINDOWS</span>
+                        <span class="tag">CHROME</span>
+                        <span class="tag">PRODUTIVIDADE</span>
+                    </div>
+                    <div class="card-arrow">
+                        <span>Ver atalhos</span>
+                        <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- HARDWARES — tall card -->
+            <a href="hardwares.html" class="card card--tall fade-up"
+               style="--card-accent: #00D9F5;"
+               data-title="hardwares componentes cpu gpu ram ssd manutenção">
+                <span class="card-number">02 //</span>
+                <div class="card-icon-wrap" style="--card-accent: #00D9F5;">
+                    <i class="fa-solid fa-memory"></i>
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title">Hardwares</h2>
+                    <p class="card-desc">Guia completo de componentes: CPU, GPU, RAM, SSD. Entenda o que cada peça faz e como fazer manutenção.</p>
+                    <div class="card-tags">
+                        <span class="tag">CPU</span>
+                        <span class="tag">GPU</span>
+                        <span class="tag">RAM</span>
+                        <span class="tag">MANUTENÇÃO</span>
+                    </div>
+                </div>
+                <div class="card-arrow">
+                    <span>Ver guia</span>
+                    <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <!-- DICAS -->
+            <a href="dicas.html" class="card card--med fade-up"
+               style="--card-accent: #F5A623;"
+               data-title="dicas de pc truques sistema otimização">
+                <span class="card-number">03 //</span>
+                <div class="card-icon-wrap" style="--card-accent: #F5A623;">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title">Dicas de PC</h2>
+                    <p class="card-desc">Truques rápidos, ajustes do sistema e otimizações que a maioria das pessoas não conhece.</p>
+                    <div class="card-tags">
+                        <span class="tag">OTIMIZAÇÃO</span>
+                        <span class="tag">SISTEMA</span>
+                    </div>
+                </div>
+                <div class="card-arrow">
+                    <span>Acessar dicas</span>
+                    <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <!-- SOFTWARES -->
+            <a href="softwares.html" class="card card--med fade-up"
+               style="--card-accent: #C792EA;"
+               data-title="softwares programas produtividade gratuito pago">
+                <span class="card-number">04 //</span>
+                <div class="card-icon-wrap" style="--card-accent: #C792EA;">
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title">Softwares</h2>
+                    <p class="card-desc">Os programas indispensáveis para produtividade, criação e segurança no dia a dia.</p>
+                    <div class="card-tags">
+                        <span class="tag">GRATUITO</span>
+                        <span class="tag">PAGO</span>
+                    </div>
+                </div>
+                <div class="card-arrow">
+                    <span>Explorar</span>
+                    <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <!-- EXTENSÕES -->
+            <a href="extensoes.html" class="card card--small fade-up"
+               style="--card-accent: #89DDFF;"
+               data-title="extensões navegador browser chrome ferramentas">
+                <span class="card-number">05 //</span>
+                <div class="card-icon-wrap" style="--card-accent: #89DDFF;">
+                    <i class="fa-solid fa-plug"></i>
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title">Extensões</h2>
+                    <p class="card-desc">As melhores ferramentas para turbinar seu navegador.</p>
+                </div>
+                <div class="card-arrow">
+                    <span>Conhecer</span>
+                    <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <!-- DIGITAÇÃO -->
+            <a href="digitacao.html" class="card card--small fade-up"
+               style="--card-accent: #FF9D8A;"
+               data-title="treino digitação velocidade wpm precisão">
+                <span class="card-number">06 //</span>
+                <div class="card-icon-wrap" style="--card-accent: #FF9D8A;">
+                    <i class="fa-solid fa-font"></i>
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title">Digitação</h2>
+                    <p class="card-desc">Melhore sua velocidade e precisão com treinos práticos.</p>
+                </div>
+                <div class="card-arrow">
+                    <span>Treinar</span>
+                    <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <!-- No results -->
+            <div id="no-results">
+                <i class="fas fa-search" style="font-size:2rem; margin-bottom:12px; display:block;"></i>
+                Nenhum resultado encontrado.
+            </div>
+        </div>
+    </main>
+
+    <!-- ─── FOOTER ─── -->
+    <footer>
+        <span class="footer-logo">MEU<span>PC</span></span>
+        <span class="footer-copy">&copy; 2025 — Todas as dicas que você precisa.</span>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>

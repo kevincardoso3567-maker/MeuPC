@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu PC — Comandos Win + R</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="dicas.css">
+</head>
+<body>
+
+    <!-- ─── HEADER ─── -->
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-microchip"></i></div>
+                <span class="logo-text">MEU<span>PC</span></span>
+            </a>
+            <div class="search-wrap">
+                <input type="text" id="commandSearch" placeholder="Filtrar comandos..." autocomplete="off">
+                <i class="fas fa-search"></i>
+            </div>
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                <span>Início</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- ─── PAGE HERO ─── -->
+    <section class="page-hero">
+        <div class="page-hero-inner">
+            <div class="breadcrumb">
+                <a href="index.html">Início</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Dicas de PC</span>
+                <i class="fas fa-chevron-right"></i>
+                <span>Comandos Win + R</span>
+            </div>
+            <div class="page-hero-content">
+                <div class="page-icon">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <div>
+                    <h1>Comandos de Execução</h1>
+                    <p>Pressione <kbd>Win</kbd> <span class="plus">+</span> <kbd>R</kbd> e digite os comandos abaixo para abrir ferramentas e pastas instantaneamente.</p>
+                </div>
+            </div>
+            <!-- Filter pills -->
+            <div class="hero-pills">
+                <span class="pill active" data-filter="all">Todos</span>
+                <span class="pill" data-filter="programas">Programas</span>
+                <span class="pill" data-filter="sistema">Sistema</span>
+                <span class="pill" data-filter="manutencao">Manutenção</span>
+                <span class="pill" data-filter="pastas">Pastas</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── MAIN CONTENT ─── -->
+    <main class="main-content">
+        <div class="main-inner">
+
+            <div id="no-results" class="no-results" style="display:none;">
+                <i class="fas fa-search"></i>
+                <p>Nenhum comando encontrado para "<span id="search-term"></span>"</p>
+            </div>
+
+            <!-- PROGRAMAS E SITES -->
+            <div class="dica-box" data-category="programas">
+                <div class="box-header">
+                    <div class="box-icon" style="--box-color: #00F5A0;">
+                        <i class="fas fa-window-restore"></i>
+                    </div>
+                    <div class="box-info">
+                        <h3>Programas e Sites</h3>
+                        <span class="box-count">17 comandos</span>
+                    </div>
+                </div>
+                <div class="cmd-list">
+                    <div class="cmd-row">
+                        <span class="cmd-label">Explorador de Arquivos</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">explorer</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">Calculadora</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">calc</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">Bloco de Notas</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">notepad</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">Paint</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">mspaint</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">Captura de Tela</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">snippingtool</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">WordPad</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">write</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">Prompt de Comando</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">cmd</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">PowerShell</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">powershell</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">Gerenc. de Tarefas</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">taskmgr</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">Photoshop</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">photoshop</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">Excel</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">excel</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">Word</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">winword</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">PowerPoint</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">powerpnt</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">Power BI</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">powerbi</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">VS Code</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">code</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">Chrome</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">chrome</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">Site (Exemplo)</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">www.google.com</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SISTEMA E CONFIG -->
+            <div class="dica-box" data-category="sistema">
+                <div class="box-header">
+                    <div class="box-icon" style="--box-color: #00D9F5;">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <div class="box-info">
+                        <h3>Sistema e Configurações</h3>
+                        <span class="box-count">9 comandos</span>
+                    </div>
+                </div>
+                <div class="cmd-list">
+                    <div class="cmd-row">
+                        <span class="cmd-label">Painel de Controle</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">control</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">Configurações</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">ms-settings:</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">Configuração do Sistema</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">msconfig</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">Serviços</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">services.msc</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">Editor de Registro</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">regedit</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">Gerenc. de Dispositivos</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">devmgmt.msc</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">Informações do Sistema</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">msinfo32</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">Diretivas de Grupo (Pro)</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">gpedit.msc</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">Contas de Usuário</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">netplwiz</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MANUTENÇÃO E REDE -->
+            <div class="dica-box" data-category="manutencao">
+                <div class="box-header">
+                    <div class="box-icon" style="--box-color: #F5A623;">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="box-info">
+                        <h3>Manutenção e Rede</h3>
+                        <span class="box-count">9 comandos</span>
+                    </div>
+                </div>
+                <div class="cmd-list">
+                    <div class="cmd-row">
+                        <span class="cmd-label">Gerenc. de Disco</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">diskmgmt.msc</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">Limpeza de Disco</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">cleanmgr</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">Desfragmentador</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">dfrgui</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">Visualizador de Eventos</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">eventvwr</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">Monitor de Recursos</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">resmon</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">Conexões de Rede</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">ncpa.cpl</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">Firewall do Windows</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">wf.msc</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">Teclado Virtual</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">osk</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">Diagnóstico DirectX</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">dxdiag</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PASTAS RÁPIDAS -->
+            <div class="dica-box" data-category="pastas">
+                <div class="box-header">
+                    <div class="box-icon" style="--box-color: #C792EA;">
+                        <i class="fas fa-folder-open"></i>
+                    </div>
+                    <div class="box-info">
+                        <h3>Pastas Rápidas</h3>
+                        <span class="box-count">6 comandos</span>
+                    </div>
+                </div>
+                <div class="cmd-list">
+                    <div class="cmd-row">
+                        <span class="cmd-label">Pasta Temporária</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">%temp%</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">AppData Roaming</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">%appdata%</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">Pasta do Usuário</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">%userprofile%</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">Inicialização</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">shell:startup</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">Programas Instalados</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">shell:programs</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-label">System32</span>
+                        <div class="cmd-unit">
+                            <code class="cmd">system32</code>
+                            <button class="copy-btn" title="Copiar"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ─── FOOTER ─── -->
+    <footer>
+        <div class="footer-inner">
+            <span class="footer-logo">MEU<span>PC</span></span>
+            <span class="footer-copy">&copy; 2025 — Todas as dicas que você precisa.</span>
+        </div>
+    </footer>
+
+    <!-- Toast -->
+    <div id="copy-toast" class="copy-toast">
+        <i class="fas fa-check"></i> Copiado!
+    </div>
+
+    <script src="dicas.js"></script>
+</body>
+</html>
