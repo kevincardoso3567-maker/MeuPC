@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu PC — Treino de Digitação</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="digitacao.css">
+</head>
+<body>
+
+    <!-- ─── HEADER ─── -->
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-microchip"></i></div>
+                <span class="logo-text">MEU<span>PC</span></span>
+            </a>
+            <div class="header-center">
+                <span class="page-label"><i class="fas fa-font"></i> Treino de Digitação</span>
+            </div>
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                <span>Início</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- ─── CONFIGURAÇÕES ─── -->
+    <div class="config-bar">
+        <div class="config-inner">
+
+            <!-- Idioma -->
+            <div class="config-group">
+                <label class="config-label"><i class="fas fa-globe"></i> Idioma</label>
+                <div class="lang-select-wrap" id="langSelectWrap">
+                    <button class="lang-trigger" id="langTrigger">
+                        <span class="lang-flag" id="langFlag">🇧🇷</span>
+                        <span class="lang-code" id="langCode">PT-BR</span>
+                        <span class="lang-name-display" id="langNameDisplay">Português · Brasil</span>
+                        <i class="fas fa-chevron-down lang-caret" id="langCaret"></i>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <div class="lang-search-wrap">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="langSearch" placeholder="Buscar idioma ou sigla..." autocomplete="off" spellcheck="false">
+                        </div>
+                        <div class="lang-list" id="langList"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modo -->
+            <div class="config-group">
+                <label class="config-label"><i class="fas fa-layer-group"></i> Modo</label>
+                <div class="config-options" id="modeOptions">
+                    <button class="opt-btn active" data-mode="words"><i class="fas fa-font"></i> Palavras</button>
+                    <button class="opt-btn" data-mode="sentences"><i class="fas fa-align-left"></i> Frases</button>
+                    <button class="opt-btn" data-mode="numbers"><i class="fas fa-hashtag"></i> Números</button>
+                    <button class="opt-btn" data-mode="code"><i class="fas fa-code"></i> Código</button>
+                </div>
+            </div>
+
+            <!-- Tempo -->
+            <div class="config-group">
+                <label class="config-label"><i class="fas fa-clock"></i> Tempo</label>
+                <div class="config-options" id="timeOptions">
+                    <button class="opt-btn" data-time="15">15s</button>
+                    <button class="opt-btn active" data-time="30">30s</button>
+                    <button class="opt-btn" data-time="60">60s</button>
+                    <button class="opt-btn" data-time="120">120s</button>
+                </div>
+            </div>
+
+            <!-- Dificuldade -->
+            <div class="config-group">
+                <label class="config-label"><i class="fas fa-signal"></i> Dificuldade</label>
+                <div class="config-options" id="diffOptions">
+                    <button class="opt-btn active" data-diff="easy">Fácil</button>
+                    <button class="opt-btn" data-diff="medium">Médio</button>
+                    <button class="opt-btn" data-diff="hard">Difícil</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ─── MAIN ─── -->
+    <main class="main-area">
+
+        <!-- STATS TOPO -->
+        <div class="stats-row">
+            <div class="stat-box" id="statWpm">
+                <span class="stat-val" id="wpmVal">0</span>
+                <span class="stat-key">WPM</span>
+            </div>
+            <div class="stat-box" id="statAcc">
+                <span class="stat-val" id="accVal">100</span>
+                <span class="stat-key">% ACC</span>
+            </div>
+            <div class="stat-box timer-box">
+                <span class="stat-val" id="timerVal">30</span>
+                <span class="stat-key">SEG</span>
+                <svg class="timer-ring" viewBox="0 0 60 60">
+                    <circle class="ring-bg" cx="30" cy="30" r="26"/>
+                    <circle class="ring-progress" id="ringProgress" cx="30" cy="30" r="26"/>
+                </svg>
+            </div>
+            <div class="stat-box" id="statErrors">
+                <span class="stat-val" id="errorsVal">0</span>
+                <span class="stat-key">ERROS</span>
+            </div>
+            <div class="stat-box" id="statChars">
+                <span class="stat-val" id="charsVal">0</span>
+                <span class="stat-key">CHARS</span>
+            </div>
+        </div>
+
+        <!-- ÁREA DE TEXTO -->
+        <div class="typing-container" id="typingContainer">
+            <div class="typing-words" id="typingWords"></div>
+            <div class="typing-cursor-line"></div>
+        </div>
+
+        <!-- INPUT INVISÍVEL -->
+        <input type="text" id="hiddenInput" class="hidden-input" autocomplete="off"
+               autocorrect="off" autocapitalize="off" spellcheck="false"
+               placeholder="Clique aqui ou pressione qualquer tecla para começar...">
+
+        <!-- CTA INICIAL -->
+        <div class="start-hint" id="startHint">
+            <i class="fas fa-keyboard"></i>
+            <span>Clique no campo acima ou pressione qualquer tecla para começar</span>
+        </div>
+
+        <!-- BOTÕES DE AÇÃO -->
+        <div class="action-row">
+            <button class="action-btn primary" id="restartBtn">
+                <i class="fas fa-rotate-right"></i> Reiniciar
+            </button>
+            <button class="action-btn" id="newTextBtn">
+                <i class="fas fa-shuffle"></i> Novo Texto
+            </button>
+        </div>
+
+        <!-- TECLADO VISUAL -->
+        <div class="keyboard-wrap">
+            <div class="keyboard-toggle" id="keyboardToggle">
+                <i class="fas fa-keyboard"></i> Teclado visual
+                <i class="fas fa-chevron-down toggle-caret"></i>
+            </div>
+            <div class="keyboard" id="keyboard">
+                <div class="kb-row">
+                    <div class="key" data-key="`">`</div>
+                    <div class="key" data-key="1">1</div>
+                    <div class="key" data-key="2">2</div>
+                    <div class="key" data-key="3">3</div>
+                    <div class="key" data-key="4">4</div>
+                    <div class="key" data-key="5">5</div>
+                    <div class="key" data-key="6">6</div>
+                    <div class="key" data-key="7">7</div>
+                    <div class="key" data-key="8">8</div>
+                    <div class="key" data-key="9">9</div>
+                    <div class="key" data-key="0">0</div>
+                    <div class="key" data-key="-">-</div>
+                    <div class="key" data-key="=">=</div>
+                    <div class="key wide" data-key="Backspace">⌫</div>
+                </div>
+                <div class="kb-row">
+                    <div class="key wide2" data-key="Tab">Tab</div>
+                    <div class="key" data-key="q">Q</div>
+                    <div class="key" data-key="w">W</div>
+                    <div class="key" data-key="e">E</div>
+                    <div class="key" data-key="r">R</div>
+                    <div class="key" data-key="t">T</div>
+                    <div class="key" data-key="y">Y</div>
+                    <div class="key" data-key="u">U</div>
+                    <div class="key" data-key="i">I</div>
+                    <div class="key" data-key="o">O</div>
+                    <div class="key" data-key="p">P</div>
+                    <div class="key" data-key="[">[</div>
+                    <div class="key" data-key="]">]</div>
+                    <div class="key wide" data-key="\">\</div>
+                </div>
+                <div class="kb-row">
+                    <div class="key wide3" data-key="CapsLock">Caps</div>
+                    <div class="key" data-key="a">A</div>
+                    <div class="key" data-key="s">S</div>
+                    <div class="key" data-key="d">D</div>
+                    <div class="key" data-key="f">F</div>
+                    <div class="key" data-key="g">G</div>
+                    <div class="key" data-key="h">H</div>
+                    <div class="key" data-key="j">J</div>
+                    <div class="key" data-key="k">K</div>
+                    <div class="key" data-key="l">L</div>
+                    <div class="key" data-key=";">;</div>
+                    <div class="key" data-key="'">'</div>
+                    <div class="key enter" data-key="Enter">Enter</div>
+                </div>
+                <div class="kb-row">
+                    <div class="key shift" data-key="Shift">Shift</div>
+                    <div class="key" data-key="z">Z</div>
+                    <div class="key" data-key="x">X</div>
+                    <div class="key" data-key="c">C</div>
+                    <div class="key" data-key="v">V</div>
+                    <div class="key" data-key="b">B</div>
+                    <div class="key" data-key="n">N</div>
+                    <div class="key" data-key="m">M</div>
+                    <div class="key" data-key=",">,</div>
+                    <div class="key" data-key=".">.</div>
+                    <div class="key" data-key="/">/</div>
+                    <div class="key shift" data-key="Shift">Shift</div>
+                </div>
+                <div class="kb-row">
+                    <div class="key wide2" data-key="Control">Ctrl</div>
+                    <div class="key wide" data-key="Alt">Alt</div>
+                    <div class="key space" data-key=" ">Espaço</div>
+                    <div class="key wide" data-key="Alt">Alt</div>
+                    <div class="key wide2" data-key="Control">Ctrl</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- HISTÓRICO -->
+        <div class="history-section" id="historySection">
+            <div class="section-header-row">
+                <h2><i class="fas fa-chart-line"></i> Histórico de Sessão</h2>
+                <button class="action-btn small" id="clearHistory">
+                    <i class="fas fa-trash"></i> Limpar
+                </button>
+            </div>
+            <div class="history-empty" id="historyEmpty">
+                <i class="fas fa-chart-bar"></i>
+                <p>Complete uma sessão para ver seu histórico aqui.</p>
+            </div>
+            <div class="history-grid" id="historyGrid"></div>
+            <canvas id="historyChart" height="100" style="display:none; margin-top:24px;"></canvas>
+        </div>
+
+    </main>
+
+    <!-- ─── MODAL DE RESULTADO ─── -->
+    <div class="result-overlay" id="resultOverlay">
+        <div class="result-modal">
+            <div class="result-header">
+                <span class="result-emoji" id="resultEmoji">🎉</span>
+                <h2 id="resultTitle">Sessão Concluída!</h2>
+                <p id="resultSubtitle">Veja seu desempenho abaixo</p>
+            </div>
+
+            <div class="result-stats">
+                <div class="result-stat highlight">
+                    <span class="rs-val" id="rWpm">0</span>
+                    <span class="rs-key">WPM</span>
+                </div>
+                <div class="result-stat">
+                    <span class="rs-val" id="rAcc">0%</span>
+                    <span class="rs-key">Precisão</span>
+                </div>
+                <div class="result-stat">
+                    <span class="rs-val" id="rChars">0</span>
+                    <span class="rs-key">Caracteres</span>
+                </div>
+                <div class="result-stat">
+                    <span class="rs-val" id="rErrors">0</span>
+                    <span class="rs-key">Erros</span>
+                </div>
+                <div class="result-stat">
+                    <span class="rs-val" id="rConsistency">0%</span>
+                    <span class="rs-key">Consistência</span>
+                </div>
+                <div class="result-stat">
+                    <span class="rs-val" id="rBest">0</span>
+                    <span class="rs-key">Melhor WPM</span>
+                </div>
+            </div>
+
+            <div class="result-rank">
+                <div class="rank-bar">
+                    <div class="rank-fill" id="rankFill"></div>
+                    <span class="rank-label" id="rankLabel">Iniciante</span>
+                </div>
+                <div class="rank-scale">
+                    <span>0</span><span>30</span><span>60</span><span>90</span><span>120+</span>
+                </div>
+            </div>
+
+            <div class="result-actions">
+                <button class="action-btn primary" id="resultRestart">
+                    <i class="fas fa-rotate-right"></i> Tentar Novamente
+                </button>
+                <button class="action-btn" id="resultNew">
+                    <i class="fas fa-shuffle"></i> Novo Texto
+                </button>
+                <button class="action-btn" id="resultClose">
+                    <i class="fas fa-xmark"></i> Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── FOOTER ─── -->
+    <footer>
+        <div class="footer-inner">
+            <span class="footer-logo">MEU<span>PC</span></span>
+            <span class="footer-copy">&copy; 2025 — Todas as dicas que você precisa.</span>
+        </div>
+    </footer>
+
+    <script src="digitacao.js"></script>
+</body>
+</html>
