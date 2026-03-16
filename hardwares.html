@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu PC — Guia de Hardware</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="hardwares.css">
+</head>
+<body>
+
+<!-- ─── HEADER ─── -->
+<header>
+    <div class="header-inner">
+        <a href="index.html" class="logo">
+            <div class="logo-icon"><i class="fas fa-microchip"></i></div>
+            <span class="logo-text">MEU<span>PC</span></span>
+        </a>
+        <nav class="page-nav" id="pageNav">
+            <a href="#guia"      class="nav-link active">Guia</a>
+            <a href="#simulador" class="nav-link">Simulador</a>
+            <a href="#manutencao"class="nav-link">Manutenção</a>
+        </nav>
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i><span>Início</span></a>
+    </div>
+</header>
+
+<!-- ─── HERO ─── -->
+<section class="hw-hero">
+    <div class="hw-hero-inner">
+        <div class="breadcrumb">
+            <a href="index.html">Início</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>Hardware</span>
+        </div>
+        <h1><span class="grad">Hardware</span><br>Guia Completo</h1>
+        <p>Aprenda o que cada componente faz, como escolher o melhor para seu uso e monte seu PC ideal com o simulador interativo.</p>
+        <div class="hero-ctas">
+            <a href="#guia"      class="cta-btn primary"><i class="fas fa-book-open"></i> Ver Guia</a>
+            <a href="#simulador" class="cta-btn">        <i class="fas fa-screwdriver-wrench"></i> Montar PC</a>
+        </div>
+    </div>
+    <!-- SVG motherboard decorativo -->
+    <div class="hero-art">
+        <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg" class="mb-art">
+            <!-- Board base -->
+            <rect x="10" y="10" width="380" height="300" rx="8" fill="#0D1117" stroke="rgba(0,245,160,0.15)" stroke-width="1.5"/>
+            <!-- Trilhas -->
+            <path d="M40 80 H180 V50 H340" stroke="rgba(0,245,160,0.12)" stroke-width="1" fill="none"/>
+            <path d="M40 120 H120 V200 H300 V240 H360" stroke="rgba(0,217,245,0.12)" stroke-width="1" fill="none"/>
+            <path d="M60 260 H200 V280 H360" stroke="rgba(0,245,160,0.08)" stroke-width="1" fill="none"/>
+            <path d="M200 80 V150 H280 V200" stroke="rgba(245,166,35,0.1)" stroke-width="1" fill="none"/>
+            <!-- CPU socket -->
+            <rect x="140" y="60" width="100" height="100" rx="4" fill="#161B22" stroke="rgba(0,245,160,0.3)" stroke-width="1.5"/>
+            <rect x="155" y="75" width="70" height="70" rx="2" fill="#0D1117" stroke="rgba(0,245,160,0.2)" stroke-width="1"/>
+            <text x="190" y="115" fill="rgba(0,245,160,0.6)" font-size="9" font-family="monospace" text-anchor="middle">CPU</text>
+            <text x="190" y="127" fill="rgba(0,245,160,0.35)" font-size="6" font-family="monospace" text-anchor="middle">LGA1700</text>
+            <!-- RAM slots -->
+            <rect x="270" y="60" width="16" height="90" rx="2" fill="#161B22" stroke="rgba(0,217,245,0.3)" stroke-width="1"/>
+            <rect x="292" y="60" width="16" height="90" rx="2" fill="#161B22" stroke="rgba(0,217,245,0.2)" stroke-width="1"/>
+            <rect x="314" y="60" width="16" height="90" rx="2" fill="#161B22" stroke="rgba(0,217,245,0.15)" stroke-width="1"/>
+            <rect x="336" y="60" width="16" height="90" rx="2" fill="#161B22" stroke="rgba(0,217,245,0.15)" stroke-width="1"/>
+            <text x="305" y="170" fill="rgba(0,217,245,0.5)" font-size="7" font-family="monospace" text-anchor="middle">DDR5</text>
+            <!-- PCIe slot GPU -->
+            <rect x="50" y="185" width="260" height="22" rx="2" fill="#161B22" stroke="rgba(199,146,234,0.3)" stroke-width="1"/>
+            <text x="180" y="200" fill="rgba(199,146,234,0.5)" font-size="7" font-family="monospace" text-anchor="middle">PCIe x16 · GPU</text>
+            <!-- M.2 slots -->
+            <rect x="50" y="230" width="80" height="12" rx="2" fill="#161B22" stroke="rgba(245,166,35,0.3)" stroke-width="1"/>
+            <text x="90" y="240" fill="rgba(245,166,35,0.5)" font-size="6" font-family="monospace" text-anchor="middle">M.2 NVMe</text>
+            <rect x="150" y="230" width="80" height="12" rx="2" fill="#161B22" stroke="rgba(245,166,35,0.2)" stroke-width="1"/>
+            <text x="190" y="240" fill="rgba(245,166,35,0.35)" font-size="6" font-family="monospace" text-anchor="middle">M.2 NVMe</text>
+            <!-- Chipset -->
+            <rect x="60" y="130" width="50" height="40" rx="3" fill="#161B22" stroke="rgba(137,221,255,0.25)" stroke-width="1"/>
+            <text x="85" y="153" fill="rgba(137,221,255,0.5)" font-size="7" font-family="monospace" text-anchor="middle">PCH</text>
+            <!-- SATA ports -->
+            <rect x="350" y="200" width="30" height="8" rx="1" fill="#161B22" stroke="rgba(255,157,138,0.3)" stroke-width="1"/>
+            <rect x="350" y="214" width="30" height="8" rx="1" fill="#161B22" stroke="rgba(255,157,138,0.25)" stroke-width="1"/>
+            <rect x="350" y="228" width="30" height="8" rx="1" fill="#161B22" stroke="rgba(255,157,138,0.2)" stroke-width="1"/>
+            <text x="365" y="245" fill="rgba(255,157,138,0.4)" font-size="6" font-family="monospace" text-anchor="middle">SATA</text>
+            <!-- I/O panel -->
+            <rect x="10" y="260" width="110" height="40" rx="0" fill="#0D1117" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+            <text x="65" y="284" fill="rgba(255,255,255,0.2)" font-size="7" font-family="monospace" text-anchor="middle">I/O PANEL</text>
+            <!-- glow dots -->
+            <circle cx="190" cy="110" r="3" fill="rgba(0,245,160,0.4)"><animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/></circle>
+            <circle cx="280" cy="105" r="2" fill="rgba(0,217,245,0.4)"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.5s" repeatCount="indefinite"/></circle>
+            <circle cx="180" cy="196" r="2" fill="rgba(199,146,234,0.4)"><animate attributeName="opacity" values="0.4;1;0.4" dur="1.8s" repeatCount="indefinite"/></circle>
+        </svg>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SEÇÃO 1 — GUIA DE COMPONENTES
+════════════════════════════════════════ -->
+<section class="section" id="guia">
+    <div class="section-inner">
+        <div class="section-header">
+            <h2><span class="mono">01</span> Guia de Componentes</h2>
+            <p>Entenda o que cada peça faz e como ela impacta o desempenho do seu PC.</p>
+        </div>
+        <div class="components-grid">
+
+            <!-- CPU -->
+            <div class="comp-card" data-comp="cpu">
+                <div class="comp-icon-wrap" style="--c:#00F5A0">
+                    <svg viewBox="0 0 48 48" fill="none"><rect x="12" y="12" width="24" height="24" rx="2" stroke="currentColor" stroke-width="2"/><rect x="17" y="17" width="14" height="14" rx="1" fill="currentColor" opacity=".3"/><line x1="8" y1="18" x2="12" y2="18" stroke="currentColor" stroke-width="2"/><line x1="8" y1="24" x2="12" y2="24" stroke="currentColor" stroke-width="2"/><line x1="8" y1="30" x2="12" y2="30" stroke="currentColor" stroke-width="2"/><line x1="36" y1="18" x2="40" y2="18" stroke="currentColor" stroke-width="2"/><line x1="36" y1="24" x2="40" y2="24" stroke="currentColor" stroke-width="2"/><line x1="36" y1="30" x2="40" y2="30" stroke="currentColor" stroke-width="2"/><line x1="18" y1="8" x2="18" y2="12" stroke="currentColor" stroke-width="2"/><line x1="24" y1="8" x2="24" y2="12" stroke="currentColor" stroke-width="2"/><line x1="30" y1="8" x2="30" y2="12" stroke="currentColor" stroke-width="2"/><line x1="18" y1="36" x2="18" y2="40" stroke="currentColor" stroke-width="2"/><line x1="24" y1="36" x2="24" y2="40" stroke="currentColor" stroke-width="2"/><line x1="30" y1="36" x2="30" y2="40" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
+                <div class="comp-body">
+                    <div class="comp-header-row">
+                        <h3>CPU</h3>
+                        <span class="comp-tag">Processador</span>
+                    </div>
+                    <p>O cérebro do computador. Executa todos os cálculos e instruções. Núcleos e frequência determinam velocidade em jogos, edição e multitarefas.</p>
+                    <div class="comp-specs">
+                        <div class="spec-item"><span>Núcleos</span><span>Multitarefa e produtividade</span></div>
+                        <div class="spec-item"><span>Clock (GHz)</span><span>Velocidade por núcleo — jogos</span></div>
+                        <div class="spec-item"><span>Socket</span><span>LGA1700 (Intel) · AM5 (AMD)</span></div>
+                        <div class="spec-item"><span>TDP (W)</span><span>Consumo e calor gerado</span></div>
+                    </div>
+                    <div class="comp-tip"><i class="fas fa-lightbulb"></i> Para jogos, priorize clock alto. Para edição de vídeo, priorize mais núcleos.</div>
+                </div>
+            </div>
+
+            <!-- GPU -->
+            <div class="comp-card" data-comp="gpu">
+                <div class="comp-icon-wrap" style="--c:#C792EA">
+                    <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="14" width="40" height="22" rx="3" stroke="currentColor" stroke-width="2"/><rect x="10" y="19" width="14" height="12" rx="1" fill="currentColor" opacity=".2" stroke="currentColor" stroke-width="1.5"/><circle cx="34" cy="25" r="4" stroke="currentColor" stroke-width="1.5"/><circle cx="34" cy="25" r="2" fill="currentColor" opacity=".4"/><line x1="12" y1="36" x2="12" y2="42" stroke="currentColor" stroke-width="2"/><line x1="18" y1="36" x2="18" y2="42" stroke="currentColor" stroke-width="2"/><line x1="24" y1="36" x2="24" y2="42" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
+                <div class="comp-body">
+                    <div class="comp-header-row">
+                        <h3>GPU</h3>
+                        <span class="comp-tag">Placa de Vídeo</span>
+                    </div>
+                    <p>Responsável pelo processamento gráfico. Essencial para jogos, renderização 3D, edição de vídeo e IA. A peça mais importante para performance visual.</p>
+                    <div class="comp-specs">
+                        <div class="spec-item"><span>VRAM (GB)</span><span>Memória de texturas e frames</span></div>
+                        <div class="spec-item"><span>CUDA/Stream</span><span>Processadores paralelos</span></div>
+                        <div class="spec-item"><span>TDP (W)</span><span>Consumo — dimensiona a PSU</span></div>
+                        <div class="spec-item"><span>Interface</span><span>PCIe x16 (3.0 / 4.0 / 5.0)</span></div>
+                    </div>
+                    <div class="comp-tip"><i class="fas fa-lightbulb"></i> 8GB VRAM mínimo para 1080p. 12GB+ para 1440p. 16GB+ para 4K e ray tracing.</div>
+                </div>
+            </div>
+
+            <!-- RAM -->
+            <div class="comp-card" data-comp="ram">
+                <div class="comp-icon-wrap" style="--c:#00D9F5">
+                    <svg viewBox="0 0 48 48" fill="none"><rect x="6" y="16" width="36" height="16" rx="2" stroke="currentColor" stroke-width="2"/><rect x="10" y="20" width="4" height="8" rx="1" fill="currentColor" opacity=".5"/><rect x="17" y="20" width="4" height="8" rx="1" fill="currentColor" opacity=".5"/><rect x="24" y="20" width="4" height="8" rx="1" fill="currentColor" opacity=".5"/><rect x="31" y="20" width="4" height="8" rx="1" fill="currentColor" opacity=".5"/><line x1="12" y1="32" x2="12" y2="38" stroke="currentColor" stroke-width="2"/><line x1="20" y1="32" x2="20" y2="38" stroke="currentColor" stroke-width="2"/><line x1="28" y1="32" x2="28" y2="38" stroke="currentColor" stroke-width="2"/><line x1="36" y1="32" x2="36" y2="38" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
+                <div class="comp-body">
+                    <div class="comp-header-row">
+                        <h3>RAM</h3>
+                        <span class="comp-tag">Memória</span>
+                    </div>
+                    <p>Memória de trabalho temporária. Quanto mais RAM, mais programas rodam simultaneamente sem lentidão. Velocidade e latência afetam especialmente CPUs AMD.</p>
+                    <div class="comp-specs">
+                        <div class="spec-item"><span>Capacidade (GB)</span><span>16GB mín · 32GB ideal · 64GB+</span></div>
+                        <div class="spec-item"><span>Frequência</span><span>DDR4-3200 ou DDR5-6000</span></div>
+                        <div class="spec-item"><span>Latência (CL)</span><span>Menor = melhor (CL14 - CL36)</span></div>
+                        <div class="spec-item"><span>Dual Channel</span><span>2 pentes = dobro de largura</span></div>
+                    </div>
+                    <div class="comp-tip"><i class="fas fa-lightbulb"></i> Sempre use 2 pentes em dual channel. 32GB é o sweet spot em 2025.</div>
+                </div>
+            </div>
+
+            <!-- Motherboard -->
+            <div class="comp-card" data-comp="mb">
+                <div class="comp-icon-wrap" style="--c:#F5A623">
+                    <svg viewBox="0 0 48 48" fill="none"><rect x="6" y="6" width="36" height="36" rx="3" stroke="currentColor" stroke-width="2"/><rect x="12" y="12" width="12" height="12" rx="1" stroke="currentColor" stroke-width="1.5" fill="currentColor" opacity=".15"/><rect x="28" y="12" width="10" height="5" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="28" y="20" width="10" height="5" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="12" y="28" width="24" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/><line x1="6" y1="36" x2="12" y2="36" stroke="currentColor" stroke-width="2"/><line x1="6" y1="30" x2="12" y2="30" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
+                <div class="comp-body">
+                    <div class="comp-header-row">
+                        <h3>Motherboard</h3>
+                        <span class="comp-tag">Placa-Mãe</span>
+                    </div>
+                    <p>Liga todos os componentes. Define quais CPUs e RAM são compatíveis, quantos slots M.2 existem e suporte a overclocking.</p>
+                    <div class="comp-specs">
+                        <div class="spec-item"><span>Chipset</span><span>B760 / Z790 (Intel) · B650 / X670 (AMD)</span></div>
+                        <div class="spec-item"><span>Form Factor</span><span>ATX · mATX · ITX</span></div>
+                        <div class="spec-item"><span>Slots M.2</span><span>Quantidade de SSDs NVMe</span></div>
+                        <div class="spec-item"><span>VRM</span><span>Qualidade para overclocking</span></div>
+                    </div>
+                    <div class="comp-tip"><i class="fas fa-lightbulb"></i> B-series é custo-benefício. Z/X-series para quem quer overclock total.</div>
+                </div>
+            </div>
+
+            <!-- SSD -->
+            <div class="comp-card" data-comp="ssd">
+                <div class="comp-icon-wrap" style="--c:#89DDFF">
+                    <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="14" width="32" height="20" rx="3" stroke="currentColor" stroke-width="2"/><circle cx="35" cy="24" r="4" stroke="currentColor" stroke-width="1.5"/><circle cx="35" cy="24" r="1.5" fill="currentColor"/><rect x="13" y="19" width="14" height="3" rx="1" fill="currentColor" opacity=".5"/><rect x="13" y="25" width="10" height="3" rx="1" fill="currentColor" opacity=".3"/></svg>
+                </div>
+                <div class="comp-body">
+                    <div class="comp-header-row">
+                        <h3>SSD / HDD</h3>
+                        <span class="comp-tag">Armazenamento</span>
+                    </div>
+                    <p>Armazena sistema operacional, programas e arquivos. SSD NVMe é até 30x mais rápido que HD. Impacta diretamente tempo de boot e carregamento de jogos.</p>
+                    <div class="comp-specs">
+                        <div class="spec-item"><span>NVMe PCIe 4.0</span><span>~7000 MB/s — padrão atual</span></div>
+                        <div class="spec-item"><span>NVMe PCIe 3.0</span><span>~3500 MB/s — ainda ótimo</span></div>
+                        <div class="spec-item"><span>SATA SSD</span><span>~550 MB/s — upgrade de HD</span></div>
+                        <div class="spec-item"><span>HDD</span><span>~150 MB/s — só para armazenamento</span></div>
+                    </div>
+                    <div class="comp-tip"><i class="fas fa-lightbulb"></i> Use SSD NVMe para o SO. HDD para armazenar arquivos grandes.</div>
+                </div>
+            </div>
+
+            <!-- PSU -->
+            <div class="comp-card" data-comp="psu">
+                <div class="comp-icon-wrap" style="--c:#FF9D8A">
+                    <svg viewBox="0 0 48 48" fill="none"><rect x="6" y="12" width="36" height="24" rx="3" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="24" r="5" stroke="currentColor" stroke-width="1.5"/><line x1="16" y1="19" x2="16" y2="17" stroke="currentColor" stroke-width="1.5"/><line x1="21" y1="24" x2="23" y2="24" stroke="currentColor" stroke-width="1.5"/><line x1="16" y1="29" x2="16" y2="31" stroke="currentColor" stroke-width="1.5"/><line x1="11" y1="24" x2="9" y2="24" stroke="currentColor" stroke-width="1.5"/><line x1="28" y1="19" x2="38" y2="19" stroke="currentColor" stroke-width="1.5"/><line x1="28" y1="24" x2="38" y2="24" stroke="currentColor" stroke-width="1.5"/><line x1="28" y1="29" x2="36" y2="29" stroke="currentColor" stroke-width="1.5"/></svg>
+                </div>
+                <div class="comp-body">
+                    <div class="comp-header-row">
+                        <h3>PSU</h3>
+                        <span class="comp-tag">Fonte de Alimentação</span>
+                    </div>
+                    <p>Converte energia da tomada para os componentes. Wattagem e certificação definem estabilidade e eficiência. Uma fonte ruim pode danificar todo o sistema.</p>
+                    <div class="comp-specs">
+                        <div class="spec-item"><span>80+ Bronze</span><span>85% eficiência — entrada</span></div>
+                        <div class="spec-item"><span>80+ Gold</span><span>90% eficiência — recomendado</span></div>
+                        <div class="spec-item"><span>80+ Platinum</span><span>92% eficiência — premium</span></div>
+                        <div class="spec-item"><span>Modular</span><span>Cabos removíveis — organização</span></div>
+                    </div>
+                    <div class="comp-tip"><i class="fas fa-lightbulb"></i> Some o TDP da CPU + GPU e adicione 20% de margem. Nunca economize na fonte.</div>
+                </div>
+            </div>
+
+            <!-- Cooler -->
+            <div class="comp-card" data-comp="cooler">
+                <div class="comp-icon-wrap" style="--c:#00F5A0">
+                    <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="14" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="24" r="4" fill="currentColor" opacity=".4"/><path d="M24 10 C20 14 20 18 24 18 C28 18 28 14 24 10Z" fill="currentColor" opacity=".6"/><path d="M38 24 C34 20 30 20 30 24 C30 28 34 28 38 24Z" fill="currentColor" opacity=".6"/><path d="M24 38 C28 34 28 30 24 30 C20 30 20 34 24 38Z" fill="currentColor" opacity=".6"/><path d="M10 24 C14 28 18 28 18 24 C18 20 14 20 10 24Z" fill="currentColor" opacity=".6"/></svg>
+                </div>
+                <div class="comp-body">
+                    <div class="comp-header-row">
+                        <h3>Cooler</h3>
+                        <span class="comp-tag">Refrigeração</span>
+                    </div>
+                    <p>Mantém a CPU em temperatura segura. Sem refrigeração adequada, o processador faz throttling e perde desempenho. Coolers air ou water liquid.</p>
+                    <div class="comp-specs">
+                        <div class="spec-item"><span>Air Cooler</span><span>Silencioso · simples · confiável</span></div>
+                        <div class="spec-item"><span>AIO 240mm</span><span>Melhor thermal · visual</span></div>
+                        <div class="spec-item"><span>AIO 360mm</span><span>CPUs de alto TDP (125W+)</span></div>
+                        <div class="spec-item"><span>TDP Support</span><span>Deve ser maior que o da CPU</span></div>
+                    </div>
+                    <div class="comp-tip"><i class="fas fa-lightbulb"></i> Para CPUs até 65W, um bom air cooler é suficiente e mais durável que AIO.</div>
+                </div>
+            </div>
+
+            <!-- Gabinete -->
+            <div class="comp-card" data-comp="case">
+                <div class="comp-icon-wrap" style="--c:#7D8590">
+                    <svg viewBox="0 0 48 48" fill="none"><rect x="10" y="6" width="26" height="36" rx="3" stroke="currentColor" stroke-width="2"/><rect x="14" y="12" width="8" height="8" rx="1" stroke="currentColor" stroke-width="1.5" fill="currentColor" opacity=".2"/><line x1="14" y1="26" x2="32" y2="26" stroke="currentColor" stroke-width="1.5"/><line x1="14" y1="30" x2="28" y2="30" stroke="currentColor" stroke-width="1.5"/><circle cx="32" cy="34" r="3" stroke="currentColor" stroke-width="1.5"/><line x1="10" y1="16" x2="6" y2="16" stroke="currentColor" stroke-width="2"/><line x1="10" y1="20" x2="6" y2="20" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
+                <div class="comp-body">
+                    <div class="comp-header-row">
+                        <h3>Gabinete</h3>
+                        <span class="comp-tag">Case</span>
+                    </div>
+                    <p>Abriga e organiza todos os componentes. Boa airflow é essencial para temperaturas baixas. Deve ser compatível com o form factor da placa-mãe.</p>
+                    <div class="comp-specs">
+                        <div class="spec-item"><span>Full Tower</span><span>Máximo espaço e airflow</span></div>
+                        <div class="spec-item"><span>Mid Tower</span><span>Equilíbrio — mais comum</span></div>
+                        <div class="spec-item"><span>Mini-ITX</span><span>Compacto — espaço limitado</span></div>
+                        <div class="spec-item"><span>Airflow</span><span>Mesh frontal = mais frio</span></div>
+                    </div>
+                    <div class="comp-tip"><i class="fas fa-lightbulb"></i> Gabinetes com mesh frontal são muito superiores aos de vidro temperado em temperatura.</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SEÇÃO 2 — SIMULADOR DE MONTAGEM
+════════════════════════════════════════ -->
+<section class="section sim-section" id="simulador">
+    <div class="section-inner">
+        <div class="section-header">
+            <h2><span class="mono">02</span> Simulador de Montagem</h2>
+            <p>Monte seu PC virtual escolhendo os componentes. O simulador valida compatibilidade e estima desempenho.</p>
+        </div>
+
+        <div class="sim-layout">
+
+            <!-- PAINEL ESQUERDO: seleção -->
+            <div class="sim-panel">
+                <div class="sim-panel-header">
+                    <i class="fas fa-list-check"></i>
+                    <span>Selecionar Componentes</span>
+                </div>
+
+                <!-- CPU -->
+                <div class="sim-slot" id="slot-cpu">
+                    <div class="slot-label"><div class="slot-dot" style="--sd:#00F5A0"></div>CPU</div>
+                    <select class="slot-select" id="sel-cpu" data-type="cpu">
+                        <option value="">— Selecione o processador —</option>
+                    </select>
+                    <div class="slot-detail" id="detail-cpu"></div>
+                </div>
+
+                <!-- Motherboard -->
+                <div class="sim-slot" id="slot-mb">
+                    <div class="slot-label"><div class="slot-dot" style="--sd:#F5A623"></div>Placa-Mãe</div>
+                    <select class="slot-select" id="sel-mb" data-type="mb">
+                        <option value="">— Selecione a placa-mãe —</option>
+                    </select>
+                    <div class="slot-detail" id="detail-mb"></div>
+                </div>
+
+                <!-- RAM -->
+                <div class="sim-slot" id="slot-ram">
+                    <div class="slot-label"><div class="slot-dot" style="--sd:#00D9F5"></div>Memória RAM</div>
+                    <select class="slot-select" id="sel-ram" data-type="ram">
+                        <option value="">— Selecione a memória —</option>
+                    </select>
+                    <div class="slot-detail" id="detail-ram"></div>
+                </div>
+
+                <!-- GPU -->
+                <div class="sim-slot" id="slot-gpu">
+                    <div class="slot-label"><div class="slot-dot" style="--sd:#C792EA"></div>Placa de Vídeo</div>
+                    <select class="slot-select" id="sel-gpu" data-type="gpu">
+                        <option value="">— Selecione a GPU —</option>
+                    </select>
+                    <div class="slot-detail" id="detail-gpu"></div>
+                </div>
+
+                <!-- SSD -->
+                <div class="sim-slot" id="slot-ssd">
+                    <div class="slot-label"><div class="slot-dot" style="--sd:#89DDFF"></div>Armazenamento</div>
+                    <select class="slot-select" id="sel-ssd" data-type="ssd">
+                        <option value="">— Selecione o armazenamento —</option>
+                    </select>
+                    <div class="slot-detail" id="detail-ssd"></div>
+                </div>
+
+                <!-- PSU -->
+                <div class="sim-slot" id="slot-psu">
+                    <div class="slot-label"><div class="slot-dot" style="--sd:#FF9D8A"></div>Fonte</div>
+                    <select class="slot-select" id="sel-psu" data-type="psu">
+                        <option value="">— Selecione a fonte —</option>
+                    </select>
+                    <div class="slot-detail" id="detail-psu"></div>
+                </div>
+
+                <!-- Cooler -->
+                <div class="sim-slot" id="slot-cooler">
+                    <div class="slot-label"><div class="slot-dot" style="--sd:#00F5A0"></div>Cooler</div>
+                    <select class="slot-select" id="sel-cooler" data-type="cooler">
+                        <option value="">— Selecione o cooler —</option>
+                    </select>
+                    <div class="slot-detail" id="detail-cooler"></div>
+                </div>
+
+                <!-- Gabinete -->
+                <div class="sim-slot" id="slot-case">
+                    <div class="slot-label"><div class="slot-dot" style="--sd:#7D8590"></div>Gabinete</div>
+                    <select class="slot-select" id="sel-case" data-type="case">
+                        <option value="">— Selecione o gabinete —</option>
+                    </select>
+                    <div class="slot-detail" id="detail-case"></div>
+                </div>
+
+                <!-- Presets rápidos -->
+                <div class="presets">
+                    <span class="preset-label">Builds rápidas:</span>
+                    <button class="preset-btn" data-preset="office"><i class="fas fa-briefcase"></i> Office</button>
+                    <button class="preset-btn" data-preset="gaming"><i class="fas fa-gamepad"></i> Gaming</button>
+                    <button class="preset-btn" data-preset="workstation"><i class="fas fa-film"></i> Workstation</button>
+                    <button class="preset-btn danger" id="clearBuild"><i class="fas fa-trash"></i> Limpar</button>
+                </div>
+            </div>
+
+            <!-- PAINEL DIREITO: análise -->
+            <div class="sim-results">
+
+                <!-- Visual do PC -->
+                <div class="pc-visual" id="pcVisual">
+                    <div class="pc-case-wrap">
+                        <div class="pc-case">
+                            <div class="pc-inner">
+                                <div class="pc-slot-vis" id="vis-mb"><i class="fas fa-microchip"></i><span>Placa-Mãe</span></div>
+                                <div class="pc-slot-vis" id="vis-cpu"><i class="fas fa-cpu"></i><span>CPU</span></div>
+                                <div class="pc-slot-vis" id="vis-ram"><i class="fas fa-memory"></i><span>RAM</span></div>
+                                <div class="pc-slot-vis" id="vis-gpu"><i class="fas fa-display"></i><span>GPU</span></div>
+                                <div class="pc-slot-vis" id="vis-ssd"><i class="fas fa-hard-drive"></i><span>SSD</span></div>
+                                <div class="pc-slot-vis" id="vis-psu"><i class="fas fa-bolt"></i><span>Fonte</span></div>
+                                <div class="pc-slot-vis" id="vis-cooler"><i class="fas fa-fan"></i><span>Cooler</span></div>
+                            </div>
+                        </div>
+                        <div class="pc-led-bar" id="pcLedBar"></div>
+                    </div>
+                </div>
+
+                <!-- Orçamento -->
+                <div class="result-card">
+                    <div class="result-card-header"><i class="fas fa-tags"></i> Orçamento Estimado</div>
+                    <div class="budget-display">
+                        <span class="budget-val" id="budgetVal">R$ 0</span>
+                        <span class="budget-label">valor aproximado de mercado</span>
+                    </div>
+                    <div class="budget-bar-wrap">
+                        <div class="budget-bar" id="budgetBar"></div>
+                    </div>
+                </div>
+
+                <!-- Consumo -->
+                <div class="result-card">
+                    <div class="result-card-header"><i class="fas fa-bolt"></i> Consumo de Energia</div>
+                    <div class="power-row">
+                        <div class="power-item">
+                            <span class="power-val" id="powerDraw">0W</span>
+                            <span class="power-key">Consumo total</span>
+                        </div>
+                        <div class="power-item">
+                            <span class="power-val" id="powerPsu">—</span>
+                            <span class="power-key">Fonte selecionada</span>
+                        </div>
+                        <div class="power-item">
+                            <span class="power-val" id="powerMargin">—</span>
+                            <span class="power-key">Margem</span>
+                        </div>
+                    </div>
+                    <div class="power-bar-wrap">
+                        <div class="power-bar" id="powerBar"></div>
+                    </div>
+                </div>
+
+                <!-- Score de performance -->
+                <div class="result-card">
+                    <div class="result-card-header"><i class="fas fa-chart-bar"></i> Score de Desempenho</div>
+                    <div class="perf-bars">
+                        <div class="perf-bar-item">
+                            <span class="perf-label"><i class="fas fa-gamepad"></i> Gaming</span>
+                            <div class="perf-track"><div class="perf-fill gaming-fill" id="score-gaming"></div></div>
+                            <span class="perf-val" id="val-gaming">—</span>
+                        </div>
+                        <div class="perf-bar-item">
+                            <span class="perf-label"><i class="fas fa-film"></i> Criação</span>
+                            <div class="perf-track"><div class="perf-fill criacao-fill" id="score-criacao"></div></div>
+                            <span class="perf-val" id="val-criacao">—</span>
+                        </div>
+                        <div class="perf-bar-item">
+                            <span class="perf-label"><i class="fas fa-briefcase"></i> Office</span>
+                            <div class="perf-track"><div class="perf-fill office-fill" id="score-office"></div></div>
+                            <span class="perf-val" id="val-office">—</span>
+                        </div>
+                        <div class="perf-bar-item">
+                            <span class="perf-label"><i class="fas fa-temperature-half"></i> Temperatura</span>
+                            <div class="perf-track"><div class="perf-fill temp-fill" id="score-temp"></div></div>
+                            <span class="perf-val" id="val-temp">—</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Compatibilidade -->
+                <div class="result-card">
+                    <div class="result-card-header"><i class="fas fa-shield-check"></i> Análise de Compatibilidade</div>
+                    <div class="compat-list" id="compatList">
+                        <div class="compat-empty">Selecione os componentes para ver a análise.</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SEÇÃO 3 — MANUTENÇÃO
+════════════════════════════════════════ -->
+<section class="section" id="manutencao">
+    <div class="section-inner">
+        <div class="section-header">
+            <h2><span class="mono">03</span> Guia de Manutenção</h2>
+            <p>Cuidados essenciais para manter seu PC funcionando bem por mais tempo.</p>
+        </div>
+        <div class="manut-grid">
+            <div class="manut-card">
+                <div class="manut-icon"><i class="fas fa-wind"></i></div>
+                <h4>Limpeza de Poeira</h4>
+                <p>Limpe o interior do gabinete a cada 3–6 meses. Use ar comprimido nos coolers, GPU e filtros. Poeira causa superaquecimento e throttling.</p>
+                <div class="manut-freq"><i class="fas fa-clock"></i> A cada 3–6 meses</div>
+            </div>
+            <div class="manut-card">
+                <div class="manut-icon"><i class="fas fa-droplet"></i></div>
+                <h4>Pasta Térmica</h4>
+                <p>Substituir a pasta térmica da CPU e GPU a cada 2–3 anos reduz a temperatura em até 15°C. Use pastas de qualidade como Thermal Grizzly Kryonaut.</p>
+                <div class="manut-freq"><i class="fas fa-clock"></i> A cada 2–3 anos</div>
+            </div>
+            <div class="manut-card">
+                <div class="manut-icon"><i class="fas fa-hard-drive"></i></div>
+                <h4>Saúde do SSD/HD</h4>
+                <p>Monitore a saúde com CrystalDiskInfo. SSDs têm vida útil em TBW. Evite encher o SSD acima de 80% da capacidade.</p>
+                <div class="manut-freq"><i class="fas fa-clock"></i> Mensalmente</div>
+            </div>
+            <div class="manut-card">
+                <div class="manut-icon"><i class="fas fa-temperature-high"></i></div>
+                <h4>Monitorar Temperatura</h4>
+                <p>Use HWiNFO64 ou MSI Afterburner. CPU deve ficar abaixo de 85°C e GPU abaixo de 90°C sob carga máxima.</p>
+                <div class="manut-freq"><i class="fas fa-clock"></i> Sempre que notar lentidão</div>
+            </div>
+            <div class="manut-card">
+                <div class="manut-icon"><i class="fas fa-plug"></i></div>
+                <h4>Reconectar Cabos</h4>
+                <p>Cabo RAM e PCIe podem perder contato com vibrações ao longo do tempo. Reconecte os principais cabos durante a limpeza semestral.</p>
+                <div class="manut-freq"><i class="fas fa-clock"></i> A cada 6 meses</div>
+            </div>
+            <div class="manut-card">
+                <div class="manut-icon"><i class="fas fa-microchip"></i></div>
+                <h4>Atualizar BIOS/UEFI</h4>
+                <p>Atualizações de BIOS trazem suporte a novos CPUs e melhorias de estabilidade. Verifique no site do fabricante da placa-mãe.</p>
+                <div class="manut-freq"><i class="fas fa-clock"></i> Quando necessário</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+    <div class="footer-inner">
+        <span class="footer-logo">MEU<span>PC</span></span>
+        <span class="footer-copy">&copy; 2025 — Todas as dicas que você precisa.</span>
+    </div>
+</footer>
+
+<script src="hardwares.js"></script>
+</body>
+</html>
